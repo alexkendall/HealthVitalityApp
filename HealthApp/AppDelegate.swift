@@ -9,6 +9,10 @@
 import UIKit
 import CoreData
 
+let main_controller = MainController();
+//let tab_controller = UITabBarController();
+let authorize_controller = AuthorizeController();
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window?.rootViewController = main_controller;
+        /*
+        tab_controller.viewControllers = [authorize_controller, main_controller];
+        tab_controller.selectedViewController = main_controller;
+        tab_controller.tabBar.backgroundColor = UIColor.blackColor();
+        tab_controller.tabBar.translucent = true;
+        window?.addSubview(tab_controller.view);
+        */
+        
         return true
     }
 
