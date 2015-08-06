@@ -43,11 +43,20 @@ class VitalityIndicator:UIView
         var height = bounds.height * 0.8;
         var offset = bounds.height * 0.1;
         
-        // draw outer circle
+        // draw outer circle -> outline
+        var outline_circle = UIBezierPath(ovalInRect: CGRect(x: offset, y: offset, width: height, height: height));
+        UIColor.blackColor().setStroke();
+        outline_circle.lineWidth = height * 0.13;
+        outline_circle.stroke();
+        
+        
+        // draw inner circle
         var outer_circle = UIBezierPath(ovalInRect: CGRect(x: offset, y: offset, width: height, height: height));
         health_color.setStroke();
         outer_circle.lineWidth = height * 0.1;
         outer_circle.stroke();
+        
+        
         
         // add label to middle
         label.frame = rect;

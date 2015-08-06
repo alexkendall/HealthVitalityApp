@@ -18,6 +18,7 @@ var phone_info_container = UIView();
 var navigation_container = UIView();
 var vitality_label = UILabel();
 var vitality_indicator = VitalityIndicator();
+var icon_containers = [UIView]();
 
 class MainController:UIViewController
 {
@@ -59,6 +60,55 @@ class MainController:UIViewController
         var real_age:CGFloat = 50.0;
         var vitality_age:CGFloat = 47.0;
         vitality_indicator.interpolate_relative_health(vitality_age, actual_age: real_age);
+        
+        // generate container view
+        var num_cols:Int = 2;
+        var num_rows:Int = 3;
+        var global_offset:CGFloat = hr_line.frame.maxY;
+        var tab_offset:CGFloat = super_view.bounds.height - hr_line2.frame.maxY;
+        var width = super_view.bounds.width / CGFloat(num_cols) + 1.0;
+        var height:CGFloat = (super_view.bounds.height - hr_line.frame.maxY - tab_offset) / CGFloat(num_rows);
+        for(var row = 0; row < num_rows; ++row)
+        {
+            for(var col = 0; col < num_cols; ++col)
+            {
+                var offset_x:CGFloat = CGFloat(col) * width - 1.0
+                var offset_y:CGFloat = (CGFloat(row) * height) + global_offset;
+                var view = UIView(frame: CGRect(x: offset_x, y: offset_y, width: width, height: height));
+                view.layer.borderWidth = 0.5;
+                view.layer.borderColor = UIColor.whiteColor().CGColor;
+                icon_containers.append(view);
+                super_view.addSubview(view);
+            }
+        }
+        
+        // add heart rate
+        var container_height = icon_containers[0].bounds.height;
+        var container_width = icon_containers[0].bounds.width;
+        var dim:CGFloat = icon_containers[0].bounds.height * 0.5;
+        var offset_x:CGFloat = (container_width - dim) * 0.5;
+        var offset_y:CGFloat = (container_height - dim) * 0.5;
+        var heart_rate = HeartRateIndicator(frame: CGRect(x: offset_x, y: offset_y, width: dim, height: dim), in_color: UIColor.whiteColor(), in_width: 2.0);
+        heart_rate.addTarget(self, action: "showProfile", forControlEvents: UIControlEvents.TouchUpInside);
+        icon_containers[0].addSubview(heart_rate);
+        
+        // add heart rate label
+        for(var i = 0; i < num_cols * num_rows; ++i)
+        {
+            var label_width:CGFloat = icon_containers[0].bounds.width;
+            var label_height:CGFloat = icon_containers[0].bounds.width * 0.10;
+            var label_offset_y:CGFloat = heart_rate.frame.maxY;
+            var label = UILabel(frame: CGRect(x: 0.0, y: label_offset_y, width: label_width, height: label_height));
+            label.font = UIFont.systemFontOfSize(12.0);
+            label.textColor = UIColor.whiteColor();
+            label.textAlignment = NSTextAlignment.Center;
+            icon_containers[i].addSubview(label);
+            
+            if(i == 0)
+            {
+                label.text = "Heart Rate";
+            }
+        }
     }
     
     func showGrid()
@@ -80,5 +130,3 @@ class MainController:UIViewController
         println("Showing profile");
     }
 }
-
-
