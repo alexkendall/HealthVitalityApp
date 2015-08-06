@@ -17,6 +17,7 @@ var toggle:Bool = false;
 var phone_info_container = UIView();
 var navigation_container = UIView();
 var vitality_label = UILabel();
+var vitality_indicator = VitalityIndicator();
 
 class MainController:UIViewController
 {
@@ -35,7 +36,7 @@ class MainController:UIViewController
         var vitality_width:CGFloat = super_view.bounds.width * 0.3;
         var vitality_offset_x:CGFloat = (super_view.bounds.width - vitality_width) * 0.5;
         var vitality_offset_y:CGFloat = vitality_width * 0.2;
-        var vitality_indicator = VitalityIndicator(frame:CGRect(x: vitality_offset_x, y: vitality_offset_y, width: vitality_width, height: vitality_width));
+        vitality_indicator = VitalityIndicator(frame:CGRect(x: vitality_offset_x, y: vitality_offset_y, width: vitality_width, height: vitality_width));
         super_view.addSubview(vitality_indicator);
         
         // add seperator line
@@ -54,15 +55,17 @@ class MainController:UIViewController
         var grid = GridButton(frame: CGRect(x: grid_offset_x, y: grid_offset_y, width: grid_dim, height: grid_dim), color: UIColor.whiteColor());
         grid.addTarget(self, action: "showGrid", forControlEvents: UIControlEvents.TouchUpInside);
         super_view.addSubview(grid);
-        
-        
-        
-        
     }
     
     func showGrid()
     {
-        println("Showing grid");
+        println("Test case...Updating health information...");
+        
+        var real_age:CGFloat = 50.0;
+        var vitality_age:CGFloat = 47.0;
+        
+        vitality_indicator.interpolate_relative_health(vitality_age, actual_age: real_age);
+        
         
     }
     
