@@ -19,6 +19,7 @@ class VitalityIndicator:UIView
     {
         super.init(frame: frame);
         backgroundColor = UIColor.clearColor();
+        addSubview(label);
     }
     
     func set_color(color:UIColor)
@@ -48,11 +49,7 @@ class VitalityIndicator:UIView
         outer_circle.lineWidth = height * 0.1;
         outer_circle.stroke();
         
-        
-        
-        
-        // create label in middle
-        label = UILabel();
+        // add label to middle
         label.frame = rect;
         label.textColor = UIColor.whiteColor();
         label.font = UIFont.systemFontOfSize(40.0);
@@ -101,6 +98,7 @@ class VitalityIndicator:UIView
             t_value = (t_value - 0.5) * 2.0;
             color = (UIColor.yellowColor() * (1.0 - t_value)) + (UIColor.redColor() * t_value);
         }
+        
         set_color(color);
         set_vitality_age(Int(vitality_age));
         vitality_indicator.setNeedsDisplay();

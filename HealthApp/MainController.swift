@@ -55,18 +55,22 @@ class MainController:UIViewController
         var grid = GridButton(frame: CGRect(x: grid_offset_x, y: grid_offset_y, width: grid_dim, height: grid_dim), color: UIColor.whiteColor());
         grid.addTarget(self, action: "showGrid", forControlEvents: UIControlEvents.TouchUpInside);
         super_view.addSubview(grid);
+        
+        var real_age:CGFloat = 50.0;
+        var vitality_age:CGFloat = 47.0;
+        vitality_indicator.interpolate_relative_health(vitality_age, actual_age: real_age);
     }
     
     func showGrid()
     {
         println("Test case...Updating health information...");
         
-        var real_age:CGFloat = 50.0;
-        var vitality_age:CGFloat = 47.0;
+        var real_age:UInt32 = arc4random_uniform(20) + 50;
+        var vitality_age:UInt32 = arc4random_uniform(20) + 50;
+        vitality_indicator.interpolate_relative_health(CGFloat(vitality_age), actual_age: CGFloat(real_age));
         
-        vitality_indicator.interpolate_relative_health(vitality_age, actual_age: real_age);
-        
-        
+        println("Real Age: " + String(real_age));
+        println("Vitality Age: " + String(vitality_age));
     }
     
     func showProfile()
