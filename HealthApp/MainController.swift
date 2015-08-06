@@ -71,6 +71,8 @@ class MainController:UIViewController
         
         println("Real Age: " + String(real_age));
         println("Vitality Age: " + String(vitality_age));
+        
+        println(get_age_from_sodium(140.0));
     }
     
     func showProfile()

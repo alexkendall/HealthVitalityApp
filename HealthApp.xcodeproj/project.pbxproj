@@ -24,6 +24,7 @@
 		4653831D1B7301D600131695 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653831C1B7301D600131695 /* Gradient.swift */; };
 		4653831F1B73041C00131695 /* Horizontal_Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653831E1B73041C00131695 /* Horizontal_Line.swift */; };
 		465383231B7393E900131695 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465383221B7393E900131695 /* Color.swift */; };
+		465383251B73BF7E00131695 /* AgePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465383241B73BF7E00131695 /* AgePredictor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		4653831C1B7301D600131695 /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		4653831E1B73041C00131695 /* Horizontal_Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Horizontal_Line.swift; sourceTree = "<group>"; };
 		465383221B7393E900131695 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		465383241B73BF7E00131695 /* AgePredictor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgePredictor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			children = (
 				464C8D901B6FB5920065552B /* MainController.swift */,
 				464C8D6C1B6F9BA40065552B /* AuthorizationController.swift */,
+				465383261B73BF9700131695 /* Algorithms */,
 				464C8DD01B712A930065552B /* UI */,
 			);
 			name = ViewControllers;
@@ -170,6 +173,14 @@
 				465383181B729D4200131695 /* GridButton.swift */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		465383261B73BF9700131695 /* Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				465383241B73BF7E00131695 /* AgePredictor.swift */,
+			);
+			name = Algorithms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +292,7 @@
 				464C8D911B6FB5920065552B /* MainController.swift in Sources */,
 				464C8D6D1B6F9BA40065552B /* AuthorizationController.swift in Sources */,
 				4653831F1B73041C00131695 /* Horizontal_Line.swift in Sources */,
+				465383251B73BF7E00131695 /* AgePredictor.swift in Sources */,
 				464C8D681B6F9BA40065552B /* AppDelegate.swift in Sources */,
 				464C8D6B1B6F9BA40065552B /* HealthApp.xcdatamodeld in Sources */,
 				465383231B7393E900131695 /* Color.swift in Sources */,
