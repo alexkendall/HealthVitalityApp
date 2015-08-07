@@ -29,6 +29,7 @@
 		465383301B74F4AC00131695 /* VitalityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653832F1B74F4AC00131695 /* VitalityIndicator.swift */; };
 		465383321B74F6A100131695 /* VitalityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465383311B74F6A100131695 /* VitalityButton.swift */; };
 		465383361B74FE1500131695 /* SpringBoardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465383351B74FE1500131695 /* SpringBoardButton.swift */; };
+		465383381B752BF200131695 /* BloodPressureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465383371B752BF200131695 /* BloodPressureButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		4653832F1B74F4AC00131695 /* VitalityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VitalityIndicator.swift; sourceTree = "<group>"; };
 		465383311B74F6A100131695 /* VitalityButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VitalityButton.swift; sourceTree = "<group>"; };
 		465383351B74FE1500131695 /* SpringBoardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringBoardButton.swift; sourceTree = "<group>"; };
+		465383371B752BF200131695 /* BloodPressureButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodPressureButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,8 +197,9 @@
 			isa = PBXGroup;
 			children = (
 				465383351B74FE1500131695 /* SpringBoardButton.swift */,
-				465383311B74F6A100131695 /* VitalityButton.swift */,
+				465383371B752BF200131695 /* BloodPressureButton.swift */,
 				465383271B73D57B00131695 /* HeartRateButton.swift */,
+				465383311B74F6A100131695 /* VitalityButton.swift */,
 				465383291B73E9E700131695 /* BarGraphButton.swift */,
 				4653832B1B74417800131695 /* LocationButton.swift */,
 			);
@@ -322,6 +325,7 @@
 				465383171B729AE300131695 /* PlusButton.swift in Sources */,
 				4653831D1B7301D600131695 /* Gradient.swift in Sources */,
 				465383191B729D4200131695 /* GridButton.swift in Sources */,
+				465383381B752BF200131695 /* BloodPressureButton.swift in Sources */,
 				465383281B73D57B00131695 /* HeartRateButton.swift in Sources */,
 				4653831B1B729D5900131695 /* Vitality.swift in Sources */,
 				465383361B74FE1500131695 /* SpringBoardButton.swift in Sources */,

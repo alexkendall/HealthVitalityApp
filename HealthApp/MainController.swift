@@ -19,7 +19,7 @@ var navigation_container = UIView();
 var vitality_label = UILabel();
 var vitality_indicator = VitalityIndicator();
 var spring_containers = [UIView]();
-var icon_labels = ["Vitality", "Progression", "Heart Rate", "Activity", "", ""];
+var icon_labels = ["Vitality", "Progression", "Heart Rate", "Activity", "Blood Pressure", ""];
 
 //-------------------------------------------------------------------------------------------------------
 
@@ -44,7 +44,6 @@ class MainController:UIViewController
         super_view.addSubview(vitality_indicator);
         
         // add seperator line to seperate  status bar and springboard
-        //vitality_indicator.addTarget(self, action: "showGrid", forControlEvents: UIControlEvents.TouchUpInside);
         var hr_line = Horizontal_Line(frame: CGRect(x: 0.0, y: vitality_indicator.frame.maxY + (vitality_width * 0.1), width: super_view.bounds.width, height: 2.0), in_color: UIColor.whiteColor(), in_width: 10.0);
         super_view.addSubview(hr_line);
         
@@ -112,6 +111,10 @@ class MainController:UIViewController
         var activityButton = LocationIndicator(frame: spring_frame, in_color: UIColor.whiteColor(), in_width: 2.0);
         spring_containers[3].addSubview(activityButton);
         activityButton.addTarget(self, action: "showActivity", forControlEvents: UIControlEvents.TouchUpInside);
+        
+        // blood pressure button
+        var pressureButton = BloodPressureButton(frame: spring_frame, in_color: UIColor.whiteColor(), in_width: 2.0);
+        spring_containers[4].addSubview(pressureButton);
         
         // add labels  below each button
         for(var i = 0; i < num_cols * num_rows; ++i)

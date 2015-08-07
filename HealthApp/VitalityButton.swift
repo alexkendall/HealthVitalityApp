@@ -39,8 +39,6 @@ class VitalityButton:SpringBoardButton
         path.lineWidth = line_width;
         line_color.setStroke();
         path.stroke();
-        
-        self.layer.cornerRadius = rect.width * 0.25;
     }
     
     //-------------------------------------------------------------------------------------------------------

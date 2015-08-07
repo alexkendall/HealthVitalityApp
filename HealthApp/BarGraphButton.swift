@@ -60,8 +60,6 @@ class GraphIndicator:SpringBoardButton
         var bezier = UIBezierPath(CGPath: path);
         bezier.lineWidth = line_width
         bezier.stroke();
-        self.layer.cornerRadius = frame.width * 0.25;
-        
     }
     
     //-------------------------------------------------------------------------------------------------------
