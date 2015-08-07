@@ -18,7 +18,10 @@ var phone_info_container = UIView();
 var navigation_container = UIView();
 var vitality_label = UILabel();
 var vitality_indicator = VitalityIndicator();
-var icon_containers = [UIView]();
+var spring_containers = [UIView]();
+var icon_labels = ["Vitality", "Progression", "Heart Rate", "Activity", "", ""];
+
+//-------------------------------------------------------------------------------------------------------
 
 class MainController:UIViewController
 {
@@ -40,13 +43,13 @@ class MainController:UIViewController
         vitality_indicator = VitalityIndicator(frame:CGRect(x: vitality_offset_x, y: vitality_offset_y, width: vitality_width, height: vitality_width));
         super_view.addSubview(vitality_indicator);
         
-        // add seperator line
+        // add seperator line to seperate  status bar and springboard
         //vitality_indicator.addTarget(self, action: "showGrid", forControlEvents: UIControlEvents.TouchUpInside);
         var hr_line = Horizontal_Line(frame: CGRect(x: 0.0, y: vitality_indicator.frame.maxY + (vitality_width * 0.1), width: super_view.bounds.width, height: 2.0), in_color: UIColor.whiteColor(), in_width: 10.0);
         super_view.addSubview(hr_line);
         
         
-        // add bottom seperator line
+        // add bottom seperator line to seperate spring board and tab bar
         var hr_line2 = Horizontal_Line(frame: CGRect(x: 0.0, y: super_view.bounds.height * 0.9, width: super_view.bounds.width, height: 2.0), in_color: UIColor.whiteColor(), in_width: 10.0);
         super_view.addSubview(hr_line2);
         
@@ -61,7 +64,7 @@ class MainController:UIViewController
         var vitality_age:CGFloat = 47.0;
         vitality_indicator.interpolate_relative_health(vitality_age, actual_age: real_age);
         
-        // generate container view
+        // generate container views to section off main controller into 6 sub views
         var num_cols:Int = 2;
         var num_rows:Int = 3;
         var global_offset:CGFloat = hr_line.frame.maxY;
@@ -75,41 +78,57 @@ class MainController:UIViewController
                 var offset_x:CGFloat = CGFloat(col) * width - 1.0
                 var offset_y:CGFloat = (CGFloat(row) * height) + global_offset;
                 var view = UIView(frame: CGRect(x: offset_x, y: offset_y, width: width, height: height));
-                view.layer.borderWidth = 0.5;
+                //view.layer.borderWidth = 0.5;
                 view.layer.borderColor = UIColor.whiteColor().CGColor;
-                icon_containers.append(view);
+                spring_containers.append(view);
                 super_view.addSubview(view);
             }
         }
         
-        // add heart rate
-        var container_height = icon_containers[0].bounds.height;
-        var container_width = icon_containers[0].bounds.width;
-        var dim:CGFloat = icon_containers[0].bounds.height * 0.5;
+        // set button dimensions
+        var container_height = spring_containers[0].bounds.height;
+        var container_width = spring_containers[0].bounds.width;
+        var dim:CGFloat = spring_containers[0].bounds.height * 0.5;
         var offset_x:CGFloat = (container_width - dim) * 0.5;
         var offset_y:CGFloat = (container_height - dim) * 0.5;
-        var heart_rate = HeartRateIndicator(frame: CGRect(x: offset_x, y: offset_y, width: dim, height: dim), in_color: UIColor.whiteColor(), in_width: 2.0);
-        heart_rate.addTarget(self, action: "showProfile", forControlEvents: UIControlEvents.TouchUpInside);
-        icon_containers[0].addSubview(heart_rate);
+        var spring_frame = CGRect(x: offset_x, y: offset_y, width: dim, height: dim);
         
-        // add heart rate label
+        // vitality button
+        var vitalityButton = VitalityButton(frame: spring_frame, in_color: UIColor.whiteColor(), in_width: 3.0);
+        spring_containers[0].addSubview(vitalityButton);
+        vitalityButton.addTarget(self, action: "showVitality", forControlEvents: UIControlEvents.TouchUpInside);
+        
+        // stats button
+        var statsButton = GraphIndicator(frame: spring_frame, in_color: UIColor.whiteColor(), in_width: 2.0);
+        spring_containers[1].addSubview(statsButton);
+        statsButton.addTarget(self, action: "showProgression", forControlEvents: UIControlEvents.TouchUpInside);
+        
+        // heart button
+        var heartRateButton = HeartRateIndicator(frame: spring_frame, in_color: UIColor.whiteColor(), in_width: 2.0);
+        heartRateButton.addTarget(self, action: "showHeartRate", forControlEvents: UIControlEvents.TouchUpInside);
+        spring_containers[2].addSubview(heartRateButton );
+        
+        // activity button
+        var activityButton = LocationIndicator(frame: spring_frame, in_color: UIColor.whiteColor(), in_width: 2.0);
+        spring_containers[3].addSubview(activityButton);
+        activityButton.addTarget(self, action: "showActivity", forControlEvents: UIControlEvents.TouchUpInside);
+        
+        // add labels  below each button
         for(var i = 0; i < num_cols * num_rows; ++i)
         {
-            var label_width:CGFloat = icon_containers[0].bounds.width;
-            var label_height:CGFloat = icon_containers[0].bounds.width * 0.10;
-            var label_offset_y:CGFloat = heart_rate.frame.maxY;
+            var label_width:CGFloat = spring_containers[0].bounds.width;
+            var label_height:CGFloat = spring_containers[0].bounds.width * 0.10;
+            var label_offset_y:CGFloat = spring_frame.maxY;
             var label = UILabel(frame: CGRect(x: 0.0, y: label_offset_y, width: label_width, height: label_height));
             label.font = UIFont.systemFontOfSize(12.0);
             label.textColor = UIColor.whiteColor();
             label.textAlignment = NSTextAlignment.Center;
-            icon_containers[i].addSubview(label);
-            
-            if(i == 0)
-            {
-                label.text = "Heart Rate";
-            }
+            spring_containers[i].addSubview(label);
+            label.text = icon_labels[i];
         }
     }
+    
+    //-------------------------------------------------------------------------------------------------------
     
     func showGrid()
     {
@@ -118,15 +137,39 @@ class MainController:UIViewController
         var real_age:UInt32 = arc4random_uniform(20) + 50;
         var vitality_age:UInt32 = arc4random_uniform(20) + 50;
         vitality_indicator.interpolate_relative_health(CGFloat(vitality_age), actual_age: CGFloat(real_age));
-        
         println("Real Age: " + String(real_age));
         println("Vitality Age: " + String(vitality_age));
-        
         println(get_age_from_sodium(140.0));
     }
     
-    func showProfile()
+    //-------------------------------------------------------------------------------------------------------
+    
+    func showHeartRate()
     {
-        println("Showing profile");
+        println("Heart rate not yet implemented!");
     }
+    
+    //-------------------------------------------------------------------------------------------------------
+    
+    func showProgression()
+    {
+        println("Progression not yet implemented!");
+    }
+    
+    //-------------------------------------------------------------------------------------------------------
+    
+    func showActivity()
+    {
+        println("Activity not yet implemented!");
+    }
+    
+    //-------------------------------------------------------------------------------------------------------
+    
+    func showVitality()
+    {
+        println("Vitality not yet implemented!");
+    }
+    
+    //-------------------------------------------------------------------------------------------------------
+    
 }

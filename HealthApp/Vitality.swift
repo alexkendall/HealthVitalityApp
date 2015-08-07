@@ -15,6 +15,8 @@ class VitalityIndicator:UIView
     var health_color:UIColor = UIColor.orangeColor();
     var vitality_age:Int = 50;
     
+    //-------------------------------------------------------------------------------------------------------
+    
     override init(frame: CGRect)
     {
         super.init(frame: frame);
@@ -22,10 +24,14 @@ class VitalityIndicator:UIView
         addSubview(label);
     }
     
+    //-------------------------------------------------------------------------------------------------------
+    
     func set_color(color:UIColor)
     {
         health_color = color;
     }
+    
+    //-------------------------------------------------------------------------------------------------------
     
     func set_vitality_age(var age:Int)
     {
@@ -33,6 +39,8 @@ class VitalityIndicator:UIView
         label.text = String(age);
         println(label.text);
     }
+    
+    //-------------------------------------------------------------------------------------------------------
     
     override func drawRect(rect: CGRect)
     {
@@ -46,7 +54,7 @@ class VitalityIndicator:UIView
         // draw outer circle -> outline
         var outline_circle = UIBezierPath(ovalInRect: CGRect(x: offset, y: offset, width: height, height: height));
         UIColor.blackColor().setStroke();
-        outline_circle.lineWidth = height * 0.13;
+        outline_circle.lineWidth = height * 0.15;
         outline_circle.stroke();
         
         
@@ -56,8 +64,6 @@ class VitalityIndicator:UIView
         outer_circle.lineWidth = height * 0.1;
         outer_circle.stroke();
         
-        
-        
         // add label to middle
         label.frame = rect;
         label.textColor = UIColor.whiteColor();
@@ -66,6 +72,8 @@ class VitalityIndicator:UIView
         addSubview(label);
         
     }
+    
+    //-------------------------------------------------------------------------------------------------------
     
     
     // sets the age of the vitality indicator
@@ -112,6 +120,8 @@ class VitalityIndicator:UIView
         set_vitality_age(Int(vitality_age));
         vitality_indicator.setNeedsDisplay();
     }
+    
+    //-------------------------------------------------------------------------------------------------------
     
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

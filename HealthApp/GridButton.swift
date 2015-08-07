@@ -15,11 +15,16 @@ import CoreGraphics
 class GridButton:UIButton
 {
     var grid_color:UIColor = UIColor.whiteColor();
+    
+    //-------------------------------------------------------------------------------------------------------
+    
     override init(frame: CGRect)
     {
         super.init(frame: frame);
         self.layer.cornerRadius = self.bounds.width * 0.5;
     }
+    
+    //-------------------------------------------------------------------------------------------------------
     
     init(frame: CGRect, color:UIColor)
     {
@@ -27,6 +32,8 @@ class GridButton:UIButton
         grid_color = color;
         backgroundColor = UIColor.clearColor();
     }
+    
+    //-------------------------------------------------------------------------------------------------------
     
     override func drawRect(rect: CGRect) {
         super.drawRect(rect);
@@ -56,6 +63,8 @@ class GridButton:UIButton
         }
 
     }
+    
+    //-------------------------------------------------------------------------------------------------------
     
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

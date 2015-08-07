@@ -9,52 +9,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HealthApp/MainController.swift"
-            timestampString = "460403427.92574"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "globalinit_33_E825ED7A11DB998B1AA662D74ED14316_func2"
-                  moduleName = "HealthApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alexharr/Desktop/HealthApp/HealthApp/MainController.swift"
-                  timestampString = "460319135.449393"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HealthApp.toggle.unsafeMutableAddressor : Swift.Bool"
-                  moduleName = "HealthApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alexharr/Desktop/HealthApp/HealthApp/MainController.swift"
-                  timestampString = "460319135.449713"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "22">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "HealthApp/VitalityCalculator.swift"
             timestampString = "460477802.700432"
             startingColumnNumber = "9223372036854775807"
@@ -71,7 +25,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HealthApp/VitalityIndicator.swift"
+            filePath = "HealthApp/Vitality.swift"
             timestampString = "460576582.924169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -87,7 +41,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HealthApp/VitalityIndicator.swift"
+            filePath = "HealthApp/Vitality.swift"
             timestampString = "460576582.924169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -103,7 +57,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HealthApp/VitalityIndicator.swift"
+            filePath = "HealthApp/Vitality.swift"
             timestampString = "460568198.064383"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -119,14 +73,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HealthApp/VitalityIndicator.swift"
+            filePath = "HealthApp/Vitality.swift"
             timestampString = "460576582.924169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
             endingLineNumber = "112"
-            landmarkName = "interpolate_relative_health(_:actual_age:)"
-            landmarkType = "5">
+            landmarkName = "VitalityIndicator"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -183,7 +137,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HealthApp/VitalityIndicator.swift"
+            filePath = "HealthApp/Vitality.swift"
             timestampString = "460576582.924169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -199,7 +153,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HealthApp/VitalityIndicator.swift"
+            filePath = "HealthApp/Vitality.swift"
             timestampString = "460576582.924169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -215,7 +169,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HealthApp/VitalityIndicator.swift"
+            filePath = "HealthApp/Vitality.swift"
             timestampString = "460576582.924169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -247,7 +201,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HealthApp/VitalityIndicator.swift"
+            filePath = "HealthApp/Vitality.swift"
             timestampString = "460576582.924169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -263,14 +217,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HealthApp/VitalityIndicator.swift"
+            filePath = "HealthApp/Vitality.swift"
             timestampString = "460576582.924169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
             endingLineNumber = "66"
-            landmarkName = "drawRect(_:)"
-            landmarkType = "5">
+            landmarkName = "VitalityIndicator"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -279,29 +233,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HealthApp/VitalityIndicator.swift"
+            filePath = "HealthApp/Vitality.swift"
             timestampString = "460576582.924169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
             endingLineNumber = "107"
             landmarkName = "interpolate_relative_health(_:actual_age:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HealthApp/MainController.swift"
-            timestampString = "460580758.114435"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "showGrid()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -325,12 +263,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HealthApp/HeartRate.swift"
-            timestampString = "460578288.770083"
+            filePath = "HealthApp/HeartRateButton.swift"
+            timestampString = "460652403.839916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "drawRect(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -342,12 +280,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthApp/MainController.swift"
-            timestampString = "460580345.16781"
+            timestampString = "460653189.038834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthApp/BarGraphButton.swift"
+            timestampString = "460652403.839916"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "drawRect(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

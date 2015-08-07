@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+//-------------------------------------------------------------------------------------------------------
 // method for overloading * operator on color
 func *(color1:UIColor, mult:CGFloat)->UIColor
 {
@@ -29,6 +30,7 @@ func *(color1:UIColor, mult:CGFloat)->UIColor
     
     return UIColor(red: r1, green: g1, blue: b1, alpha: alpha);
 }
+//-------------------------------------------------------------------------------------------------------
 
 // method for overloading + operator on color
 func +(color1:UIColor, color2:UIColor)->UIColor
@@ -39,6 +41,8 @@ func +(color1:UIColor, color2:UIColor)->UIColor
     color2.getRed(&r2, green: &g2, blue: &b2, alpha: &alpha2);
     return UIColor(red: (r1 + r2), green: (g1 + g2), blue: (b1 + b2), alpha: 1.0);
 }
+
+//-------------------------------------------------------------------------------------------------------
 
 func linear_interpolation(color1: UIColor, color2: UIColor, var t_value:CGFloat) ->UIColor
 {
@@ -54,3 +58,5 @@ func linear_interpolation(color1: UIColor, color2: UIColor, var t_value:CGFloat)
     var a3:CGFloat = (a1 * t_value) + a2 * (1.0 - t_value);
     return UIColor(red: r3, green: g3, blue: b3, alpha: a3);
 }
+
+//-------------------------------------------------------------------------------------------------------

@@ -7,29 +7,25 @@
 //
 
 import Foundation
-
-import Foundation
 import UIKit
 import CoreGraphics
 
-class HeartRateIndicator:UIButton
+class HeartRateIndicator:SpringBoardButton
 {
-    var line_color:UIColor = UIColor.whiteColor();
-    var line_width:CGFloat = 2.0;
+    //-------------------------------------------------------------------------------------------------------
     
-    init(frame: CGRect, var in_color:UIColor, var in_width:CGFloat)
+    override init(frame: CGRect, var in_color:UIColor, var in_width:CGFloat)
     {
-        super.init(frame: frame);
-        backgroundColor = UIColor.clearColor();
-        line_color = in_color;
-        line_width = in_width;
-        layer.borderWidth = 1.0;
-        layer.borderColor = line_color.CGColor;
+        super.init(frame: frame, in_color: in_color, in_width: in_width);
     }
+    
+    //-------------------------------------------------------------------------------------------------------
     
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    //-------------------------------------------------------------------------------------------------------
     
     override func drawRect(rect: CGRect) {
         super.drawRect(rect);
@@ -77,4 +73,6 @@ class HeartRateIndicator:UIButton
         bezier.lineWidth = line_width
         bezier.stroke();
     }
+    
+    //-------------------------------------------------------------------------------------------------------
 }

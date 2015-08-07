@@ -16,16 +16,19 @@
 		464C8D811B6F9BA40065552B /* HealthAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464C8D801B6F9BA40065552B /* HealthAppTests.swift */; };
 		464C8D8C1B6F9C3A0065552B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 464C8D8B1B6F9C3A0065552B /* HealthKit.framework */; };
 		464C8D911B6FB5920065552B /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464C8D901B6FB5920065552B /* MainController.swift */; };
-		464C8D971B6FFD5A0065552B /* VitalityCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464C8D961B6FFD5A0065552B /* VitalityCalculator.swift */; };
-		464C8DD21B713C930065552B /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464C8DD11B713C930065552B /* Circle.swift */; };
 		465383171B729AE300131695 /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465383161B729AE300131695 /* PlusButton.swift */; };
 		465383191B729D4200131695 /* GridButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465383181B729D4200131695 /* GridButton.swift */; };
-		4653831B1B729D5900131695 /* VitalityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653831A1B729D5900131695 /* VitalityIndicator.swift */; };
+		4653831B1B729D5900131695 /* Vitality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653831A1B729D5900131695 /* Vitality.swift */; };
 		4653831D1B7301D600131695 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653831C1B7301D600131695 /* Gradient.swift */; };
 		4653831F1B73041C00131695 /* Horizontal_Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653831E1B73041C00131695 /* Horizontal_Line.swift */; };
 		465383231B7393E900131695 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465383221B7393E900131695 /* Color.swift */; };
 		465383251B73BF7E00131695 /* AgePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465383241B73BF7E00131695 /* AgePredictor.swift */; };
-		465383281B73D57B00131695 /* HeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465383271B73D57B00131695 /* HeartRate.swift */; };
+		465383281B73D57B00131695 /* HeartRateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465383271B73D57B00131695 /* HeartRateButton.swift */; };
+		4653832A1B73E9E700131695 /* BarGraphButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465383291B73E9E700131695 /* BarGraphButton.swift */; };
+		4653832C1B74417800131695 /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653832B1B74417800131695 /* LocationButton.swift */; };
+		465383301B74F4AC00131695 /* VitalityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653832F1B74F4AC00131695 /* VitalityIndicator.swift */; };
+		465383321B74F6A100131695 /* VitalityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465383311B74F6A100131695 /* VitalityButton.swift */; };
+		465383361B74FE1500131695 /* SpringBoardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465383351B74FE1500131695 /* SpringBoardButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,16 +56,19 @@
 		464C8D8B1B6F9C3A0065552B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		464C8D8D1B6F9C3A0065552B /* HealthApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HealthApp.entitlements; sourceTree = "<group>"; };
 		464C8D901B6FB5920065552B /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
-		464C8D961B6FFD5A0065552B /* VitalityCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VitalityCalculator.swift; sourceTree = "<group>"; };
-		464C8DD11B713C930065552B /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		465383161B729AE300131695 /* PlusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlusButton.swift; path = ../../PlusButton.swift; sourceTree = "<group>"; };
 		465383181B729D4200131695 /* GridButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridButton.swift; sourceTree = "<group>"; };
-		4653831A1B729D5900131695 /* VitalityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VitalityIndicator.swift; sourceTree = "<group>"; };
+		4653831A1B729D5900131695 /* Vitality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vitality.swift; sourceTree = "<group>"; };
 		4653831C1B7301D600131695 /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		4653831E1B73041C00131695 /* Horizontal_Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Horizontal_Line.swift; sourceTree = "<group>"; };
 		465383221B7393E900131695 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		465383241B73BF7E00131695 /* AgePredictor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgePredictor.swift; sourceTree = "<group>"; };
-		465383271B73D57B00131695 /* HeartRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRate.swift; sourceTree = "<group>"; };
+		465383271B73D57B00131695 /* HeartRateButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateButton.swift; sourceTree = "<group>"; };
+		465383291B73E9E700131695 /* BarGraphButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarGraphButton.swift; sourceTree = "<group>"; };
+		4653832B1B74417800131695 /* LocationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationButton.swift; path = ../LocationButton.swift; sourceTree = "<group>"; };
+		4653832F1B74F4AC00131695 /* VitalityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VitalityIndicator.swift; sourceTree = "<group>"; };
+		465383311B74F6A100131695 /* VitalityButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VitalityButton.swift; sourceTree = "<group>"; };
+		465383351B74FE1500131695 /* SpringBoardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringBoardButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,7 @@
 		464C8D591B6F9BA40065552B = {
 			isa = PBXGroup;
 			children = (
+				4653832F1B74F4AC00131695 /* VitalityIndicator.swift */,
 				464C8D8B1B6F9C3A0065552B /* HealthKit.framework */,
 				464C8D641B6F9BA40065552B /* HealthApp */,
 				464C8D7D1B6F9BA40065552B /* HealthAppTests */,
@@ -108,8 +115,6 @@
 			children = (
 				464C8D8D1B6F9C3A0065552B /* HealthApp.entitlements */,
 				464C8D671B6F9BA40065552B /* AppDelegate.swift */,
-				464C8D981B6FFD680065552B /* Algorithms */,
-				464C8D961B6FFD5A0065552B /* VitalityCalculator.swift */,
 				464C8D8A1B6F9BBE0065552B /* ViewControllers */,
 				464C8D6E1B6F9BA40065552B /* Main.storyboard */,
 				464C8D711B6F9BA40065552B /* Images.xcassets */,
@@ -156,24 +161,17 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		464C8D981B6FFD680065552B /* Algorithms */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Algorithms;
-			sourceTree = "<group>";
-		};
 		464C8DD01B712A930065552B /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				465383331B74FB9100131695 /* Button */,
 				4653831C1B7301D600131695 /* Gradient.swift */,
-				464C8DD11B713C930065552B /* Circle.swift */,
-				4653831E1B73041C00131695 /* Horizontal_Line.swift */,
-				4653831A1B729D5900131695 /* VitalityIndicator.swift */,
-				465383271B73D57B00131695 /* HeartRate.swift */,
 				465383221B7393E900131695 /* Color.swift */,
+				4653831E1B73041C00131695 /* Horizontal_Line.swift */,
+				4653831A1B729D5900131695 /* Vitality.swift */,
 				465383161B729AE300131695 /* PlusButton.swift */,
 				465383181B729D4200131695 /* GridButton.swift */,
+				465383341B74FDEC00131695 /* SpringBoardButton */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -184,6 +182,25 @@
 				465383241B73BF7E00131695 /* AgePredictor.swift */,
 			);
 			name = Algorithms;
+			sourceTree = "<group>";
+		};
+		465383331B74FB9100131695 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Button;
+			sourceTree = "<group>";
+		};
+		465383341B74FDEC00131695 /* SpringBoardButton */ = {
+			isa = PBXGroup;
+			children = (
+				465383351B74FE1500131695 /* SpringBoardButton.swift */,
+				465383311B74F6A100131695 /* VitalityButton.swift */,
+				465383271B73D57B00131695 /* HeartRateButton.swift */,
+				465383291B73E9E700131695 /* BarGraphButton.swift */,
+				4653832B1B74417800131695 /* LocationButton.swift */,
+			);
+			name = SpringBoardButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,7 +309,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4653832A1B73E9E700131695 /* BarGraphButton.swift in Sources */,
+				465383301B74F4AC00131695 /* VitalityIndicator.swift in Sources */,
 				464C8D911B6FB5920065552B /* MainController.swift in Sources */,
+				4653832C1B74417800131695 /* LocationButton.swift in Sources */,
 				464C8D6D1B6F9BA40065552B /* AuthorizationController.swift in Sources */,
 				4653831F1B73041C00131695 /* Horizontal_Line.swift in Sources */,
 				465383251B73BF7E00131695 /* AgePredictor.swift in Sources */,
@@ -302,10 +322,10 @@
 				465383171B729AE300131695 /* PlusButton.swift in Sources */,
 				4653831D1B7301D600131695 /* Gradient.swift in Sources */,
 				465383191B729D4200131695 /* GridButton.swift in Sources */,
-				465383281B73D57B00131695 /* HeartRate.swift in Sources */,
-				464C8D971B6FFD5A0065552B /* VitalityCalculator.swift in Sources */,
-				4653831B1B729D5900131695 /* VitalityIndicator.swift in Sources */,
-				464C8DD21B713C930065552B /* Circle.swift in Sources */,
+				465383281B73D57B00131695 /* HeartRateButton.swift in Sources */,
+				4653831B1B729D5900131695 /* Vitality.swift in Sources */,
+				465383361B74FE1500131695 /* SpringBoardButton.swift in Sources */,
+				465383321B74F6A100131695 /* VitalityButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +384,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alex Harrison (R2658GUVMS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -410,7 +430,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alex Harrison (R2658GUVMS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
