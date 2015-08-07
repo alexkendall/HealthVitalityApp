@@ -61,7 +61,7 @@ class VitalityIndicator:UIView
         // draw inner circle
         var outer_circle = UIBezierPath(ovalInRect: CGRect(x: offset, y: offset, width: height, height: height));
         health_color.setStroke();
-        outer_circle.lineWidth = height * 0.1;
+        outer_circle.lineWidth = height * 0.125;
         outer_circle.stroke();
         
         // add label to middle
@@ -70,7 +70,6 @@ class VitalityIndicator:UIView
         label.font = UIFont.systemFontOfSize(40.0);
         label.textAlignment = NSTextAlignment.Center;
         addSubview(label);
-        
     }
     
     //-------------------------------------------------------------------------------------------------------

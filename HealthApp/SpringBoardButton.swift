@@ -15,6 +15,7 @@ class SpringBoardButton:UIButton
 {
     var line_color:UIColor = UIColor.whiteColor();
     var line_width:CGFloat = 2.0;
+    var path:UIBezierPath  = UIBezierPath();
     
     init(frame: CGRect, var in_color:UIColor, var in_width:CGFloat)
     {
@@ -24,6 +25,10 @@ class SpringBoardButton:UIButton
         line_width = in_width;
         layer.borderWidth = 1.0;
         layer.borderColor = line_color.CGColor;
+        path.lineWidth = in_width;
+        addTarget(self, action: "highlight_color", forControlEvents: UIControlEvents.TouchDown);
+        addTarget(self, action: "unhighlight_color", forControlEvents: UIControlEvents.TouchUpInside);
+        addTarget(self, action: "unhighlight_color", forControlEvents: UIControlEvents.TouchUpOutside);
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -33,5 +38,18 @@ class SpringBoardButton:UIButton
     override func drawRect(rect: CGRect) {
         super.drawRect(rect);
         self.layer.cornerRadius = rect.width * 0.25;
+    }
+    
+    func highlight_color()
+    {
+        println("Highlighting color");
+        line_color = UIColor.blackColor();
+        self.setNeedsDisplay();
+    }
+    
+    func unhighlight_color()
+    {
+        line_color = UIColor.whiteColor();
+        self.setNeedsDisplay();
     }
 }

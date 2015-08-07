@@ -31,7 +31,7 @@ class VitalityButton:SpringBoardButton
     override func drawRect(rect: CGRect) {
         super.drawRect(rect);
         var margin:CGFloat = rect.width * 0.15;
-        var path = UIBezierPath();
+        path = UIBezierPath();
         
         path.moveToPoint(CGPoint(x: margin, y: margin));
         path.addLineToPoint(CGPoint(x: rect.width * 0.5, y: rect.height - margin));

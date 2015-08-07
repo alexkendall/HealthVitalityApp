@@ -30,7 +30,6 @@ class HeartRateIndicator:SpringBoardButton
     override func drawRect(rect: CGRect) {
         super.drawRect(rect);
         
-        var path = CGPathCreateMutable();
         var start_x = rect.origin.x;
         var start_y = rect.origin.y;
         var height = rect.height;
@@ -60,18 +59,16 @@ class HeartRateIndicator:SpringBoardButton
         var y7 = offset_y + (0.0 * height);
         var y_vals = [y1, y2, y3, y4, y5, y6, y7];
         
-        CGPathMoveToPoint(path, nil, 0.0, height * 0.5);
+
+        path.moveToPoint(CGPoint(x: 0.0, y: height * 0.5));
         for(var i = 0; i < num_points; ++i)
         {
-            CGPathAddLineToPoint(path, nil, x_vals[i], y_vals[i]);
+            path.addLineToPoint(CGPoint(x: x_vals[i], y: y_vals[i]));
         }
-        
         self.layer.cornerRadius = frame.width * 0.25;
         
         line_color.setStroke();
-        var bezier = UIBezierPath(CGPath: path);
-        bezier.lineWidth = line_width
-        bezier.stroke();
+        path.stroke();
     }
     
     //-------------------------------------------------------------------------------------------------------
