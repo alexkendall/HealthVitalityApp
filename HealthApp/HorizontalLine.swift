@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreGraphics
 
-class Horizontal_Line:UIView
+class HorizontalLine:UIView
 {
     
     //-------------------------------------------------------------------------------------------------------

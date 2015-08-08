@@ -42,14 +42,17 @@ class SpringBoardButton:UIButton
     
     func highlight_color()
     {
-        println("Highlighting color");
         line_color = UIColor.blackColor();
+        backgroundColor = UIColor.whiteColor();
+        self.clipsToBounds = true;
         self.setNeedsDisplay();
     }
     
     func unhighlight_color()
     {
+        backgroundColor = UIColor.clearColor();
         line_color = UIColor.whiteColor();
+        self.clipsToBounds = true;
         self.setNeedsDisplay();
     }
 }

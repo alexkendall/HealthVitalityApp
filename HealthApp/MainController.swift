@@ -19,7 +19,7 @@ var navigation_container = UIView();
 var vitality_label = UILabel();
 var vitality_indicator = VitalityIndicator();
 var spring_containers = [UIView]();
-var icon_labels = ["Vitality", "Progression", "Heart Rate", "Activity", "Blood Pressure", ""];
+var icon_labels = ["Vitality", "Progression", "Heart Rate", "Activity", "Blood Pressure", "Measurements"];
 
 //-------------------------------------------------------------------------------------------------------
 
@@ -44,12 +44,12 @@ class MainController:UIViewController
         super_view.addSubview(vitality_indicator);
         
         // add seperator line to seperate  status bar and springboard
-        var hr_line = Horizontal_Line(frame: CGRect(x: 0.0, y: vitality_indicator.frame.maxY + (vitality_width * 0.1), width: super_view.bounds.width, height: 2.0), in_color: UIColor.whiteColor(), in_width: 10.0);
+        var hr_line = HorizontalLine(frame: CGRect(x: 0.0, y: vitality_indicator.frame.maxY + (vitality_width * 0.1), width: super_view.bounds.width, height: 2.0), in_color: UIColor.whiteColor(), in_width: 10.0);
         super_view.addSubview(hr_line);
         
         
         // add bottom seperator line to seperate spring board and tab bar
-        var hr_line2 = Horizontal_Line(frame: CGRect(x: 0.0, y: super_view.bounds.height * 0.9, width: super_view.bounds.width, height: 2.0), in_color: UIColor.whiteColor(), in_width: 10.0);
+        var hr_line2 = HorizontalLine(frame: CGRect(x: 0.0, y: super_view.bounds.height * 0.9, width: super_view.bounds.width, height: 2.0), in_color: UIColor.whiteColor(), in_width: 10.0);
         super_view.addSubview(hr_line2);
         
         var grid_dim:CGFloat = (super_view.bounds.height - hr_line2.frame.maxY) * 0.6;
@@ -115,6 +115,12 @@ class MainController:UIViewController
         // blood pressure button
         var pressureButton = BloodPressureButton(frame: spring_frame, in_color: UIColor.whiteColor(), in_width: 2.0);
         spring_containers[4].addSubview(pressureButton);
+        pressureButton.addTarget(self, action: "showPressure", forControlEvents: UIControlEvents.TouchUpInside);
+        
+        // ruler button
+        var rulerButton = RulerButton(frame: spring_frame, in_color: UIColor.whiteColor(), in_width: 2.0);
+        spring_containers[5].addSubview(rulerButton);
+        rulerButton.addTarget(self, action: "showMeasurements", forControlEvents: UIControlEvents.TouchUpInside);
         
         // add labels  below each button
         for(var i = 0; i < num_cols * num_rows; ++i)
@@ -128,7 +134,7 @@ class MainController:UIViewController
             label.textAlignment = NSTextAlignment.Center;
             spring_containers[i].addSubview(label);
             label.text = icon_labels[i];
-        }
+        } 
     }
     
     //-------------------------------------------------------------------------------------------------------
@@ -171,6 +177,20 @@ class MainController:UIViewController
     func showVitality()
     {
         println("Vitality not yet implemented!");
+    }
+    
+    //-------------------------------------------------------------------------------------------------------
+    
+    func showPressure()
+    {
+        println("Pressure not yet implemented!");
+    }
+    
+    //-------------------------------------------------------------------------------------------------------
+    
+    func showMeasurements()
+    {
+        println("Measurements not yet implemented!");
     }
     
     //-------------------------------------------------------------------------------------------------------
