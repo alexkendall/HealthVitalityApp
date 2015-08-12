@@ -10,8 +10,8 @@ import UIKit
 import CoreData
 
 let main_controller = MainController();
-//let tab_controller = UITabBarController();
 let authorize_controller = AuthorizeController();
+let activity_controller = ActivityController();
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

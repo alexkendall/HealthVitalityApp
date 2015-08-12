@@ -9,29 +9,32 @@
 import Foundation
 import UIKit
 import QuartzCore
+import Charts
 
-var LIGHT_BLUE = UIColor(red: 0.0, green: 152.0 / 255.0, blue: 197.0 / 255.0, alpha: 1.0);
-var DARK_BLUE = UIColor(red: 0.0, green: 76.0 / 255.0, blue: 98.0 / 255.0, alpha: 1.0);
-var nav_button = UIButton();
-var super_view = UIView();
-var toggle:Bool = false;
-var phone_info_container = UIView();
-var navigation_container = UIView();
-var vitality_label = UILabel();
-var vitality_indicator = VitalityIndicator();
-var spring_containers = [UIView]();
-var spring_buttons = [SpringBoardButton]();
-var icon_labels = ["Vitality", "Progression", "Heart Rate", "Activity", "Blood Pressure", "Measurements"];
-var controller_titles = ["My Vitality", "Progression", "Heart Rate", "My Activity", "Blood Pressure", "Measurements"];
-var out_container_frames = [CGRect]();
-var in_container_frame = CGRect();
-var hr_line:HorizontalLine?;
-var spring_labels = [UILabel]();
-var title_label = UILabel();
 //-------------------------------------------------------------------------------------------------------
 
 class MainController:UIViewController
 {
+    var LIGHT_BLUE = UIColor(red: 0.0, green: 152.0 / 255.0, blue: 197.0 / 255.0, alpha: 1.0);
+    var DARK_BLUE = UIColor(red: 0.0, green: 76.0 / 255.0, blue: 98.0 / 255.0, alpha: 1.0);
+    var nav_button = UIButton();
+    var super_view = UIView();
+    var toggle:Bool = false;
+    var phone_info_container = UIView();
+    var navigation_container = UIView();
+    var vitality_label = UILabel();
+    var vitality_indicator = VitalityIndicator();
+    var spring_containers = [UIView]();
+    var spring_buttons = [SpringBoardButton]();
+    var icon_labels = ["Vitality", "Progression", "Heart Rate", "Activity", "Blood Pressure", "Measurements"];
+    var controller_titles = ["My Vitality", "Progression", "Heart Rate", "My Activity", "Blood Pressure", "Measurements"];
+    var out_container_frames = [CGRect]();
+    var in_container_frame = CGRect();
+    var hr_line:HorizontalLine?;
+    var hr_line2:HorizontalLine?;
+    var spring_labels = [UILabel]();
+    var title_label = UILabel();
+    
     override func viewDidLoad() {
     
         super.viewDidLoad();
@@ -56,11 +59,11 @@ class MainController:UIViewController
         
         
         // add bottom seperator line to seperate spring board and tab bar
-        var hr_line2 = HorizontalLine(frame: CGRect(x: 0.0, y: super_view.bounds.height * 0.9, width: super_view.bounds.width, height: 2.0), in_color: UIColor.whiteColor(), in_width: 10.0);
-        super_view.addSubview(hr_line2);
+        hr_line2 = HorizontalLine(frame: CGRect(x: 0.0, y: super_view.bounds.height * 0.9, width: super_view.bounds.width, height: 2.0), in_color: UIColor.whiteColor(), in_width: 10.0);
+        super_view.addSubview(self.hr_line2!);
         
-        var grid_dim:CGFloat = (super_view.bounds.height - hr_line2.frame.maxY) * 0.6;
-        var grid_offset_y:CGFloat = hr_line2.frame.maxY + ((super_view.bounds.height - hr_line2.frame.maxY - grid_dim) * 0.5);
+        var grid_dim:CGFloat = (super_view.bounds.height - self.hr_line2!.frame.maxY) * 0.6;
+        var grid_offset_y:CGFloat = self.hr_line2!.frame.maxY + ((super_view.bounds.height - self.hr_line2!.frame.maxY - grid_dim) * 0.5);
         var grid_offset_x:CGFloat = (super_view.bounds.width - grid_dim) * 0.5;
         var grid = GridButton(frame: CGRect(x: grid_offset_x, y: grid_offset_y, width: grid_dim, height: grid_dim), color: UIColor.whiteColor());
         grid.addTarget(self, action: "showGrid", forControlEvents: UIControlEvents.TouchUpInside);
@@ -74,7 +77,7 @@ class MainController:UIViewController
         var num_cols:Int = 2;
         var num_rows:Int = 3;
         var global_offset:CGFloat = hr_line!.frame.maxY;
-        var tab_offset:CGFloat = super_view.bounds.height - hr_line2.frame.maxY;
+        var tab_offset:CGFloat = super_view.bounds.height - self.hr_line2!.frame.maxY;
         var width = super_view.bounds.width / CGFloat(num_cols) + 1.0;
         var height:CGFloat = (super_view.bounds.height - hr_line!.frame.maxY - tab_offset) / CGFloat(num_rows);
         for(var row = 0; row < num_rows; ++row)
@@ -181,19 +184,18 @@ class MainController:UIViewController
         
         for(var i = 0; i < out_container_frames.count; ++i)
         {
-            
             UIView.animateWithDuration(1.25, animations: {
-                for(var i = 0; i < out_container_frames.count; ++i)
+                for(var i = 0; i < self.out_container_frames.count; ++i)
                 {
-                    spring_containers[i].frame = out_container_frames[i];
-                    spring_containers[i].alpha = 1.0;
-                    vitality_indicator.alpha = 1.0;
-                    spring_labels[i].alpha = 1.0;
-                    title_label.alpha = 0.0;
+                    self.spring_containers[i].frame = self.out_container_frames[i];
+                    self.spring_containers[i].alpha = 1.0;
+                    self.vitality_indicator.alpha = 1.0;
+                    self.spring_labels[i].alpha = 1.0;
+                    self.title_label.alpha = 0.0;
                 }
             })
         }
-
+        activity_controller.view.removeFromSuperview();
     }
     
     //-------------------------------------------------------------------------------------------------------
@@ -203,33 +205,33 @@ class MainController:UIViewController
         for(var i = 0; i < out_container_frames.count; ++i)
         {
             UIView.animateWithDuration(1.25, animations: {
-                for(var i = 0; i < out_container_frames.count; ++i)
+                for(var i = 0; i < self.out_container_frames.count; ++i)
                 {
-                    var offset_y:CGFloat = (hr_line!.frame.maxY - spring_containers[0].bounds.height) * 0.5;
-                    var offset_x:CGFloat = spring_containers[0].frame.origin.x;
-                    var height:CGFloat = spring_containers[0].bounds.height;
-                    var width:CGFloat = spring_containers[1].bounds.width;
+                    var offset_y:CGFloat = (self.hr_line!.frame.maxY - self.spring_containers[0].bounds.height) * 0.5;
+                    var offset_x:CGFloat = self.spring_containers[0].frame.origin.x;
+                    var height:CGFloat = self.spring_containers[0].bounds.height;
+                    var width:CGFloat = self.spring_containers[1].bounds.width;
                     var frame:CGRect = CGRect(x: offset_x, y: offset_y, width: width, height: height);
                 
-                    title_label.text = controller_titles[index];
-                    title_label.alpha = 1.0;
+                    self.title_label.text = self.controller_titles[index];
+                    self.title_label.alpha = 1.0;
                     
                     // change frame
-                    spring_containers[i].frame = frame;
+                    self.spring_containers[i].frame = frame;
                     
                     if(i != index)
                     {
-                        spring_containers[i].alpha = 0.0;
+                        self.spring_containers[i].alpha = 0.0;
                     }
-                    spring_labels[i].alpha = 0.0;
+                    self.spring_labels[i].alpha = 0.0;
                     //vitality_indicator.alpha = 0.0;
                 }
             })
             
             UIView.animateWithDuration(0.5, animations: {
-                for(var i = 0; i < out_container_frames.count; ++i)
+                for(var i = 0; i < self.out_container_frames.count; ++i)
                 {
-                    vitality_indicator.alpha = 0.0;
+                    self.vitality_indicator.alpha = 0.0;
                 }
             })
 
@@ -255,6 +257,7 @@ class MainController:UIViewController
     
     func showActivity()
     {
+        main_controller.super_view.addSubview(activity_controller.view);
         animate_selection(3);
     }
     

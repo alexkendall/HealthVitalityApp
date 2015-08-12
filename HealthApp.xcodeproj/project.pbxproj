@@ -32,6 +32,10 @@
 		465383381B752BF200131695 /* BloodPressureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465383371B752BF200131695 /* BloodPressureButton.swift */; };
 		4653833A1B76A9D800131695 /* RulerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465383391B76A9D800131695 /* RulerButton.swift */; };
 		4653833D1B76B26B00131695 /* MeasurementsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653833C1B76B26B00131695 /* MeasurementsController.swift */; };
+		465383441B7BB39E00131695 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465383431B7BB35500131695 /* Charts.framework */; };
+		465383451B7BB39E00131695 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 465383431B7BB35500131695 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4653834B1B7BB52E00131695 /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653834A1B7BB52E00131695 /* ActivityController.swift */; };
+		4653834D1B7BC1B500131695 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653834C1B7BC1B500131695 /* BaseController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +46,35 @@
 			remoteGlobalIDString = 464C8D611B6F9BA40065552B;
 			remoteInfo = HealthApp;
 		};
+		465383421B7BB35500131695 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4653833E1B7BB35400131695 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
+			remoteInfo = Charts;
+		};
+		465383461B7BB39E00131695 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4653833E1B7BB35400131695 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
+			remoteInfo = Charts;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		465383481B7BB39E00131695 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				465383451B7BB39E00131695 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		464C8D621B6F9BA40065552B /* HealthApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +107,9 @@
 		465383371B752BF200131695 /* BloodPressureButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodPressureButton.swift; sourceTree = "<group>"; };
 		465383391B76A9D800131695 /* RulerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulerButton.swift; sourceTree = "<group>"; };
 		4653833C1B76B26B00131695 /* MeasurementsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementsController.swift; sourceTree = "<group>"; };
+		4653833E1B7BB35400131695 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Downloads/ios-charts-master 3/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
+		4653834A1B7BB52E00131695 /* ActivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityController.swift; path = ../ActivityController.swift; sourceTree = "<group>"; };
+		4653834C1B7BC1B500131695 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				464C8D8C1B6F9C3A0065552B /* HealthKit.framework in Frameworks */,
+				465383441B7BB39E00131695 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +157,9 @@
 			children = (
 				464C8D8D1B6F9C3A0065552B /* HealthApp.entitlements */,
 				464C8D671B6F9BA40065552B /* AppDelegate.swift */,
+				465383261B73BF9700131695 /* Algorithms */,
+				464C8DD01B712A930065552B /* UI */,
+				465383491B7BB49B00131695 /* Charts */,
 				464C8D8A1B6F9BBE0065552B /* ViewControllers */,
 				464C8D6E1B6F9BA40065552B /* Main.storyboard */,
 				464C8D711B6F9BA40065552B /* Images.xcassets */,
@@ -160,10 +199,10 @@
 			isa = PBXGroup;
 			children = (
 				464C8D901B6FB5920065552B /* MainController.swift */,
+				4653834C1B7BC1B500131695 /* BaseController.swift */,
+				4653834A1B7BB52E00131695 /* ActivityController.swift */,
 				4653833C1B76B26B00131695 /* MeasurementsController.swift */,
 				464C8D6C1B6F9BA40065552B /* AuthorizationController.swift */,
-				465383261B73BF9700131695 /* Algorithms */,
-				464C8DD01B712A930065552B /* UI */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -171,14 +210,14 @@
 		464C8DD01B712A930065552B /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				465383331B74FB9100131695 /* Button */,
+				465383331B74FB9100131695 /* Buttons */,
 				4653831C1B7301D600131695 /* Gradient.swift */,
 				465383221B7393E900131695 /* Color.swift */,
 				4653831E1B73041C00131695 /* HorizontalLine.swift */,
 				4653831A1B729D5900131695 /* Vitality.swift */,
 				465383161B729AE300131695 /* PlusButton.swift */,
 				465383181B729D4200131695 /* GridButton.swift */,
-				465383341B74FDEC00131695 /* SpringBoardButton */,
+				465383341B74FDEC00131695 /* SpringBoardButtons */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -191,14 +230,14 @@
 			name = Algorithms;
 			sourceTree = "<group>";
 		};
-		465383331B74FB9100131695 /* Button */ = {
+		465383331B74FB9100131695 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Button;
+			name = Buttons;
 			sourceTree = "<group>";
 		};
-		465383341B74FDEC00131695 /* SpringBoardButton */ = {
+		465383341B74FDEC00131695 /* SpringBoardButtons */ = {
 			isa = PBXGroup;
 			children = (
 				465383351B74FE1500131695 /* SpringBoardButton.swift */,
@@ -209,7 +248,23 @@
 				4653832B1B74417800131695 /* LocationButton.swift */,
 				465383391B76A9D800131695 /* RulerButton.swift */,
 			);
-			name = SpringBoardButton;
+			name = SpringBoardButtons;
+			sourceTree = "<group>";
+		};
+		4653833F1B7BB35400131695 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				465383431B7BB35500131695 /* Charts.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		465383491B7BB49B00131695 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				4653833E1B7BB35400131695 /* Charts.xcodeproj */,
+			);
+			name = Charts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,10 +277,12 @@
 				464C8D5E1B6F9BA40065552B /* Sources */,
 				464C8D5F1B6F9BA40065552B /* Frameworks */,
 				464C8D601B6F9BA40065552B /* Resources */,
+				465383481B7BB39E00131695 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				465383471B7BB39E00131695 /* PBXTargetDependency */,
 			);
 			name = HealthApp;
 			productName = HealthApp;
@@ -285,6 +342,12 @@
 			mainGroup = 464C8D591B6F9BA40065552B;
 			productRefGroup = 464C8D631B6F9BA40065552B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4653833F1B7BB35400131695 /* Products */;
+					ProjectRef = 4653833E1B7BB35400131695 /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				464C8D611B6F9BA40065552B /* HealthApp */,
@@ -292,6 +355,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		465383431B7BB35500131695 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 465383421B7BB35500131695 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		464C8D601B6F9BA40065552B /* Resources */ = {
@@ -334,9 +407,11 @@
 				465383191B729D4200131695 /* GridButton.swift in Sources */,
 				465383381B752BF200131695 /* BloodPressureButton.swift in Sources */,
 				465383281B73D57B00131695 /* HeartRateButton.swift in Sources */,
+				4653834B1B7BB52E00131695 /* ActivityController.swift in Sources */,
 				4653831B1B729D5900131695 /* Vitality.swift in Sources */,
 				465383361B74FE1500131695 /* SpringBoardButton.swift in Sources */,
 				465383321B74F6A100131695 /* VitalityButton.swift in Sources */,
+				4653834D1B7BC1B500131695 /* BaseController.swift in Sources */,
 				4653833A1B76A9D800131695 /* RulerButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +431,11 @@
 			isa = PBXTargetDependency;
 			target = 464C8D611B6F9BA40065552B /* HealthApp */;
 			targetProxy = 464C8D7B1B6F9BA40065552B /* PBXContainerItemProxy */;
+		};
+		465383471B7BB39E00131695 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 465383461B7BB39E00131695 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

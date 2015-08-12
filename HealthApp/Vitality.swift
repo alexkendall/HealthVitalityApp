@@ -117,7 +117,7 @@ class VitalityIndicator:UIView
         
         set_color(color);
         set_vitality_age(Int(vitality_age));
-        vitality_indicator.setNeedsDisplay();
+        main_controller.vitality_indicator.setNeedsDisplay();
     }
     
     //-------------------------------------------------------------------------------------------------------

@@ -15,6 +15,6 @@ func add_gradient(var color1:UIColor, var color2:UIColor, var view:UIView)
     var gradient = CAGradientLayer();
     gradient.locations = [0,1];
     gradient.colors = [color1.CGColor, color2.CGColor];
-    gradient.frame = super_view.bounds;
+    gradient.frame = main_controller.super_view.bounds;
     view.layer.addSublayer(gradient);
 }
