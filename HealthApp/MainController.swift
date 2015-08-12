@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import QuartzCore
 
 var LIGHT_BLUE = UIColor(red: 0.0, green: 152.0 / 255.0, blue: 197.0 / 255.0, alpha: 1.0);
 var DARK_BLUE = UIColor(red: 0.0, green: 76.0 / 255.0, blue: 98.0 / 255.0, alpha: 1.0);
@@ -19,8 +20,14 @@ var navigation_container = UIView();
 var vitality_label = UILabel();
 var vitality_indicator = VitalityIndicator();
 var spring_containers = [UIView]();
+var spring_buttons = [SpringBoardButton]();
 var icon_labels = ["Vitality", "Progression", "Heart Rate", "Activity", "Blood Pressure", "Measurements"];
-
+var controller_titles = ["My Vitality", "Progression", "Heart Rate", "My Activity", "Blood Pressure", "Measurements"];
+var out_container_frames = [CGRect]();
+var in_container_frame = CGRect();
+var hr_line:HorizontalLine?;
+var spring_labels = [UILabel]();
+var title_label = UILabel();
 //-------------------------------------------------------------------------------------------------------
 
 class MainController:UIViewController
@@ -44,8 +51,8 @@ class MainController:UIViewController
         super_view.addSubview(vitality_indicator);
         
         // add seperator line to seperate  status bar and springboard
-        var hr_line = HorizontalLine(frame: CGRect(x: 0.0, y: vitality_indicator.frame.maxY + (vitality_width * 0.1), width: super_view.bounds.width, height: 2.0), in_color: UIColor.whiteColor(), in_width: 10.0);
-        super_view.addSubview(hr_line);
+        hr_line = HorizontalLine(frame: CGRect(x: 0.0, y: vitality_indicator.frame.maxY + (vitality_width * 0.1), width: super_view.bounds.width, height: 2.0), in_color: UIColor.whiteColor(), in_width: 10.0);
+        super_view.addSubview(hr_line!);
         
         
         // add bottom seperator line to seperate spring board and tab bar
@@ -66,17 +73,19 @@ class MainController:UIViewController
         // generate container views to section off main controller into 6 sub views
         var num_cols:Int = 2;
         var num_rows:Int = 3;
-        var global_offset:CGFloat = hr_line.frame.maxY;
+        var global_offset:CGFloat = hr_line!.frame.maxY;
         var tab_offset:CGFloat = super_view.bounds.height - hr_line2.frame.maxY;
         var width = super_view.bounds.width / CGFloat(num_cols) + 1.0;
-        var height:CGFloat = (super_view.bounds.height - hr_line.frame.maxY - tab_offset) / CGFloat(num_rows);
+        var height:CGFloat = (super_view.bounds.height - hr_line!.frame.maxY - tab_offset) / CGFloat(num_rows);
         for(var row = 0; row < num_rows; ++row)
         {
             for(var col = 0; col < num_cols; ++col)
             {
                 var offset_x:CGFloat = CGFloat(col) * width - 1.0
                 var offset_y:CGFloat = (CGFloat(row) * height) + global_offset;
-                var view = UIView(frame: CGRect(x: offset_x, y: offset_y, width: width, height: height));
+                var frame = CGRect(x: offset_x, y: offset_y, width: width, height: height);
+                var view = UIView(frame: frame);
+                out_container_frames.append(frame);
                 //view.layer.borderWidth = 0.5;
                 view.layer.borderColor = UIColor.whiteColor().CGColor;
                 spring_containers.append(view);
@@ -95,32 +104,39 @@ class MainController:UIViewController
         // vitality button
         var vitalityButton = VitalityButton(frame: spring_frame, in_color: UIColor.whiteColor(), in_width: 3.0);
         spring_containers[0].addSubview(vitalityButton);
+        spring_buttons.append(vitalityButton);
         vitalityButton.addTarget(self, action: "showVitality", forControlEvents: UIControlEvents.TouchUpInside);
         
         // stats button
         var statsButton = GraphIndicator(frame: spring_frame, in_color: UIColor.whiteColor(), in_width: 2.0);
         spring_containers[1].addSubview(statsButton);
+        spring_buttons.append(statsButton);
         statsButton.addTarget(self, action: "showProgression", forControlEvents: UIControlEvents.TouchUpInside);
         
         // heart button
         var heartRateButton = HeartRateIndicator(frame: spring_frame, in_color: UIColor.whiteColor(), in_width: 2.0);
         heartRateButton.addTarget(self, action: "showHeartRate", forControlEvents: UIControlEvents.TouchUpInside);
+        spring_buttons.append(heartRateButton);
         spring_containers[2].addSubview(heartRateButton );
         
         // activity button
         var activityButton = LocationIndicator(frame: spring_frame, in_color: UIColor.whiteColor(), in_width: 2.0);
         spring_containers[3].addSubview(activityButton);
+        spring_buttons.append(activityButton);
         activityButton.addTarget(self, action: "showActivity", forControlEvents: UIControlEvents.TouchUpInside);
         
         // blood pressure button
         var pressureButton = BloodPressureButton(frame: spring_frame, in_color: UIColor.whiteColor(), in_width: 2.0);
         spring_containers[4].addSubview(pressureButton);
+        spring_buttons.append(pressureButton);
         pressureButton.addTarget(self, action: "showPressure", forControlEvents: UIControlEvents.TouchUpInside);
         
         // ruler button
         var rulerButton = RulerButton(frame: spring_frame, in_color: UIColor.whiteColor(), in_width: 2.0);
         spring_containers[5].addSubview(rulerButton);
+        spring_buttons.append(rulerButton);
         rulerButton.addTarget(self, action: "showMeasurements", forControlEvents: UIControlEvents.TouchUpInside);
+    
         
         // add labels  below each button
         for(var i = 0; i < num_cols * num_rows; ++i)
@@ -134,7 +150,19 @@ class MainController:UIViewController
             label.textAlignment = NSTextAlignment.Center;
             spring_containers[i].addSubview(label);
             label.text = icon_labels[i];
-        } 
+            spring_labels.append(label);
+        }
+        
+        var label_y:CGFloat = 0.0;
+        var label_x:CGFloat = spring_buttons[0].frame.maxX + 10.0;
+        var label_width:CGFloat = super_view.bounds.width - label_x;
+        var label_height:CGFloat = hr_line!.frame.maxY;
+        title_label = UILabel(frame: CGRect(x: label_x, y: label_y, width: label_width, height: label_height));
+        title_label.textColor = UIColor.whiteColor();
+        title_label.textAlignment = NSTextAlignment.Left;
+        title_label.font = UIFont.systemFontOfSize(22.0);
+        title_label.alpha = 0.0;
+        super_view.addSubview(title_label);
     }
     
     //-------------------------------------------------------------------------------------------------------
@@ -149,48 +177,106 @@ class MainController:UIViewController
         println("Real Age: " + String(real_age));
         println("Vitality Age: " + String(vitality_age));
         println(get_age_from_sodium(140.0));
+        
+        
+        for(var i = 0; i < out_container_frames.count; ++i)
+        {
+            
+            UIView.animateWithDuration(1.25, animations: {
+                for(var i = 0; i < out_container_frames.count; ++i)
+                {
+                    spring_containers[i].frame = out_container_frames[i];
+                    spring_containers[i].alpha = 1.0;
+                    vitality_indicator.alpha = 1.0;
+                    spring_labels[i].alpha = 1.0;
+                    title_label.alpha = 0.0;
+                }
+            })
+        }
+
     }
+    
+    //-------------------------------------------------------------------------------------------------------
+    
+    func animate_selection(var index:Int)
+    {
+        for(var i = 0; i < out_container_frames.count; ++i)
+        {
+            UIView.animateWithDuration(1.25, animations: {
+                for(var i = 0; i < out_container_frames.count; ++i)
+                {
+                    var offset_y:CGFloat = (hr_line!.frame.maxY - spring_containers[0].bounds.height) * 0.5;
+                    var offset_x:CGFloat = spring_containers[0].frame.origin.x;
+                    var height:CGFloat = spring_containers[0].bounds.height;
+                    var width:CGFloat = spring_containers[1].bounds.width;
+                    var frame:CGRect = CGRect(x: offset_x, y: offset_y, width: width, height: height);
+                
+                    title_label.text = controller_titles[index];
+                    title_label.alpha = 1.0;
+                    
+                    // change frame
+                    spring_containers[i].frame = frame;
+                    
+                    if(i != index)
+                    {
+                        spring_containers[i].alpha = 0.0;
+                    }
+                    spring_labels[i].alpha = 0.0;
+                    //vitality_indicator.alpha = 0.0;
+                }
+            })
+            
+            UIView.animateWithDuration(0.5, animations: {
+                for(var i = 0; i < out_container_frames.count; ++i)
+                {
+                    vitality_indicator.alpha = 0.0;
+                }
+            })
+
+        }
+    }
+    
     
     //-------------------------------------------------------------------------------------------------------
     
     func showHeartRate()
     {
-        println("Heart rate not yet implemented!");
+        animate_selection(2);
     }
     
     //-------------------------------------------------------------------------------------------------------
     
     func showProgression()
     {
-        println("Progression not yet implemented!");
+        animate_selection(1);
     }
     
     //-------------------------------------------------------------------------------------------------------
     
     func showActivity()
     {
-        println("Activity not yet implemented!");
+        animate_selection(3);
     }
     
     //-------------------------------------------------------------------------------------------------------
     
     func showVitality()
     {
-        println("Vitality not yet implemented!");
+        animate_selection(0);
     }
     
     //-------------------------------------------------------------------------------------------------------
     
     func showPressure()
     {
-        println("Pressure not yet implemented!");
+        animate_selection(4);
     }
     
     //-------------------------------------------------------------------------------------------------------
     
     func showMeasurements()
     {
-        println("Measurements not yet implemented!");
+        animate_selection(5);
     }
     
     //-------------------------------------------------------------------------------------------------------

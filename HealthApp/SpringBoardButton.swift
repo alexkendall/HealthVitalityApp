@@ -38,6 +38,9 @@ class SpringBoardButton:UIButton
     override func drawRect(rect: CGRect) {
         super.drawRect(rect);
         self.layer.cornerRadius = rect.width * 0.25;
+        self.layer.shadowOffset = CGSize(width: 2.0, height: 2.0);
+        self.layer.shadowOpacity = Float(0.5);
+        self.layer.shadowColor = UIColor.blackColor().CGColor;
     }
     
     func highlight_color()

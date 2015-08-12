@@ -280,11 +280,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthApp/MainController.swift"
-            timestampString = "460664064.333415"
+            timestampString = "461083950.547452"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
