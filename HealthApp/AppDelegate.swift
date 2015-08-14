@@ -12,6 +12,7 @@ import CoreData
 let main_controller = MainController();
 let authorize_controller = AuthorizeController();
 let activity_controller = ActivityController();
+let measurements_controller = MeasurementsController();
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -166,6 +166,7 @@ class MainController:UIViewController
         title_label.font = UIFont.systemFontOfSize(22.0);
         title_label.alpha = 0.0;
         super_view.addSubview(title_label);
+        
     }
     
     //-------------------------------------------------------------------------------------------------------
@@ -195,7 +196,7 @@ class MainController:UIViewController
                 }
             })
         }
-        activity_controller.view.removeFromSuperview();
+        activity_controller.push_out();
     }
     
     //-------------------------------------------------------------------------------------------------------
@@ -224,7 +225,6 @@ class MainController:UIViewController
                         self.spring_containers[i].alpha = 0.0;
                     }
                     self.spring_labels[i].alpha = 0.0;
-                    //vitality_indicator.alpha = 0.0;
                 }
             })
             
@@ -279,6 +279,7 @@ class MainController:UIViewController
     
     func showMeasurements()
     {
+        main_controller.super_view.addSubview(measurements_controller.view);
         animate_selection(5);
     }
     
