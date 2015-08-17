@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+var OLIVE = UIColor(red: 255.0 / 255.0, green: 218.0 / 255.0, blue: 0.0, alpha: 1.0);
+var RED_ORANGE = UIColor(red: 255.0 / 255.0, green: 74.0 / 255.0, blue: 0.0, alpha: 1.0);
+
 //-------------------------------------------------------------------------------------------------------
 // method for overloading * operator on color
 func *(color1:UIColor, mult:CGFloat)->UIColor

@@ -1,0 +1,54 @@
+/*
+Test conversion functions
+*/
+
+
+var x1 = inches_to_centimeters(23); // 58.42
+println(x1);
+
+var x2 = inches_to_centimeters(4); // 10.16
+println(x2);
+
+var x3 = inches_to_centimeters(0); // 0
+println(x3);
+
+var x4 = inches_to_centimeters(72); // 182.88
+println(x4);
+
+var x5 = inches_to_centimeters(1); // 2.54
+println(x5);
+
+
+var c1 = centimeters_to_inches(0); // 0
+println(c1);
+
+var c2 = centimeters_to_inches(1); // 0.393701
+println(c2);
+
+var c3 = centimeters_to_inches(10); // 3.93701
+println(c3);
+
+var c4 = centimeters_to_inches(70); // 27.5591
+println(c4);
+
+var k1 = pounds_to_kilos(0); // 0
+println(k1);
+
+var k2 = pounds_to_kilos(1); // 0.453592
+println(k2);
+
+var k3 = pounds_to_kilos(10); // 4.53592
+println(k3);
+
+var k4 = pounds_to_kilos(70); // 31.7515
+println(k4);
+
+var p1 = kilos_to_pounds(0); // 0
+
+var p2 = kilos_to_pounds(1); // 2.20462
+
+var p3 = kilos_to_pounds(10); // 22.0462
+
+var p4 = kilos_to_pounds(70); // 154.324
+
+

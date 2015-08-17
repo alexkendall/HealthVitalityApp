@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		464656D31B8219E900803A4E /* measurement_tests in Resources */ = {isa = PBXBuildFile; fileRef = 464656D21B8219E900803A4E /* measurement_tests */; };
 		464C8D681B6F9BA40065552B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464C8D671B6F9BA40065552B /* AppDelegate.swift */; };
 		464C8D6B1B6F9BA40065552B /* HealthApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 464C8D691B6F9BA40065552B /* HealthApp.xcdatamodeld */; };
 		464C8D6D1B6F9BA40065552B /* AuthorizationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464C8D6C1B6F9BA40065552B /* AuthorizationController.swift */; };
@@ -16,6 +17,7 @@
 		464C8D811B6F9BA40065552B /* HealthAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464C8D801B6F9BA40065552B /* HealthAppTests.swift */; };
 		464C8D8C1B6F9C3A0065552B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 464C8D8B1B6F9C3A0065552B /* HealthKit.framework */; };
 		464C8D911B6FB5920065552B /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464C8D901B6FB5920065552B /* MainController.swift */; };
+		4652D8011B8165E100ECFB43 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4652D8001B8165E100ECFB43 /* UserData.swift */; };
 		465383191B729D4200131695 /* GridButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465383181B729D4200131695 /* GridButton.swift */; };
 		4653831B1B729D5900131695 /* Vitality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653831A1B729D5900131695 /* Vitality.swift */; };
 		4653831D1B7301D600131695 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653831C1B7301D600131695 /* Gradient.swift */; };
@@ -76,6 +78,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		464656D21B8219E900803A4E /* measurement_tests */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = measurement_tests; sourceTree = "<group>"; };
 		464C8D621B6F9BA40065552B /* HealthApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		464C8D661B6F9BA40065552B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		464C8D671B6F9BA40065552B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +93,7 @@
 		464C8D8B1B6F9C3A0065552B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		464C8D8D1B6F9C3A0065552B /* HealthApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HealthApp.entitlements; sourceTree = "<group>"; };
 		464C8D901B6FB5920065552B /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		4652D8001B8165E100ECFB43 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		465383181B729D4200131695 /* GridButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridButton.swift; sourceTree = "<group>"; };
 		4653831A1B729D5900131695 /* Vitality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vitality.swift; sourceTree = "<group>"; };
 		4653831C1B7301D600131695 /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
@@ -130,6 +134,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		464656D41B8219EE00803A4E /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				464656D21B8219E900803A4E /* measurement_tests */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
 		464C8D591B6F9BA40065552B = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +167,7 @@
 			children = (
 				464C8D8D1B6F9C3A0065552B /* HealthApp.entitlements */,
 				464C8D671B6F9BA40065552B /* AppDelegate.swift */,
+				4652D7FF1B8165C800ECFB43 /* Data */,
 				465383261B73BF9700131695 /* Algorithms */,
 				464C8DD01B712A930065552B /* UI */,
 				465383491B7BB49B00131695 /* Charts */,
@@ -163,6 +176,7 @@
 				464C8D711B6F9BA40065552B /* Images.xcassets */,
 				464C8D731B6F9BA40065552B /* LaunchScreen.xib */,
 				464C8D691B6F9BA40065552B /* HealthApp.xcdatamodeld */,
+				464656D41B8219EE00803A4E /* Tests */,
 				464C8D651B6F9BA40065552B /* Supporting Files */,
 			);
 			path = HealthApp;
@@ -217,6 +231,14 @@
 				465383341B74FDEC00131695 /* SpringBoardButtons */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		4652D7FF1B8165C800ECFB43 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4652D8001B8165E100ECFB43 /* UserData.swift */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 		465383261B73BF9700131695 /* Algorithms */ = {
@@ -369,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				464C8D701B6F9BA40065552B /* Main.storyboard in Resources */,
+				464656D31B8219E900803A4E /* measurement_tests in Resources */,
 				464C8D751B6F9BA40065552B /* LaunchScreen.xib in Resources */,
 				464C8D721B6F9BA40065552B /* Images.xcassets in Resources */,
 			);
@@ -404,6 +427,7 @@
 				465383381B752BF200131695 /* BloodPressureButton.swift in Sources */,
 				465383281B73D57B00131695 /* HeartRateButton.swift in Sources */,
 				4653834B1B7BB52E00131695 /* ActivityController.swift in Sources */,
+				4652D8011B8165E100ECFB43 /* UserData.swift in Sources */,
 				4653831B1B729D5900131695 /* Vitality.swift in Sources */,
 				465383361B74FE1500131695 /* SpringBoardButton.swift in Sources */,
 				465383321B74F6A100131695 /* VitalityButton.swift in Sources */,

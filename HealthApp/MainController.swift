@@ -166,7 +166,7 @@ class MainController:UIViewController
         title_label.font = UIFont.systemFontOfSize(22.0);
         title_label.alpha = 0.0;
         super_view.addSubview(title_label);
-        
+
     }
     
     //-------------------------------------------------------------------------------------------------------
@@ -197,6 +197,7 @@ class MainController:UIViewController
             })
         }
         activity_controller.push_out();
+        measurements_controller.view.removeFromSuperview();
     }
     
     //-------------------------------------------------------------------------------------------------------
