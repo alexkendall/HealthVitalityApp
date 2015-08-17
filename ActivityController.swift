@@ -17,8 +17,6 @@ class ActivityController:BaseController
     var lineChartView = LineChartView();
     var chart_in_frame = CGRect();
     var chart_out_frame = CGRect();
-    var super_in_frame = CGRect();
-    var super_out_frame = CGRect();
     
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -29,11 +27,6 @@ class ActivityController:BaseController
         var offset_x:CGFloat = (super_view.bounds.width - chart_dim) * 0.5;
         var offset_y:CGFloat = (super_view.bounds.height - chart_dim) * 0.5;
         
-        // configure super in and out frames for animation
-        super_in_frame = CGRect(x: super_view.frame.origin.x, y: super_view.frame.origin.y, width: super_view.bounds.width, height: super_view.bounds.height);
-        super_out_frame = CGRect(x: super_view.bounds.width, y: super_view.frame.origin.y, width: super_view.bounds.width, height: super_view.bounds.height);
-        super_view.frame = super_out_frame;
-        
         // configure line chart frame
         lineChartView = LineChartView(frame: CGRect(x: offset_x, y: offset_y, width: chart_dim, height: chart_dim));
         super_view.addSubview(lineChartView)
@@ -41,40 +34,15 @@ class ActivityController:BaseController
         // configure mock line chartd data
         days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
         unitsSold = [2000.0, 4000.0, 6000.0, 3000.0, 1200.0, 5,000, 3,000];
-        setChart(days, values: unitsSold)
-        
-    ;
+        setChart(days, values: unitsSold);
         
     }
     
     override func viewDidAppear(animated: Bool)
     {
-        println("view is appearing");
-        
         super.viewDidAppear(animated);
         lineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0);
-        
-        UIView.animateWithDuration(2.0, animations: {
-            println("here");
-            self.super_view.frame = self.super_in_frame;
-        })
-        
-        
     }
-    
-    func push_out()
-    {
-        UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
-            
-            self.super_view.frame = self.super_out_frame;
-            
-            }, completion: { (finished: Bool) -> Void in
-                
-                // you can do this in a shorter, more concise way by setting the value to its opposite, NOT value
-                self.super_view.removeFromSuperview();
-        })
-    }
-    
     
     func setChart(dataPoints: [String], values: [Double])
     {

@@ -197,7 +197,7 @@ class MainController:UIViewController
             })
         }
         activity_controller.push_out();
-        measurements_controller.view.removeFromSuperview();
+        measurements_controller.push_out();
     }
     
     //-------------------------------------------------------------------------------------------------------

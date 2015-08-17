@@ -10,7 +10,6 @@ import Foundation
 import Charts
 import UIKit
 
-
 class MeasurementsController:BaseController
 {
     var height:CGFloat = 72.00;
@@ -29,7 +28,7 @@ class MeasurementsController:BaseController
         
         // configure mock line chartd data
         var dim_labels = ["Height (inches)", "Weight (pounds)"];
-        var my_vals = [71.0, 170];
+        var my_vals = [user_measurements.height, user_measurements.weight];
         
         
         // configure mock line chartd data
@@ -61,18 +60,16 @@ class MeasurementsController:BaseController
         
         // personal data set
         var personal_data_set = BarChartDataSet(yVals: personal_entries, label: "Personal");
-        personal_data_set.colors = [OLIVE];
+        personal_data_set.colors = [SUNSET_YELLOW];
         personal_data_set.valueTextColor = UIColor.whiteColor();
         
         // global avg data set
         var avg_data_set = BarChartDataSet(yVals: avg_data_entries, label: "Global Average")
-        avg_data_set.colors = [RED_ORANGE];
+        avg_data_set.colors = [PIONEER_RED];
         avg_data_set.valueTextColor = UIColor.whiteColor();
     
         
         var chart_data = BarChartData(xVals: dim_labels, dataSets: [personal_data_set, avg_data_set]);
-    
-        
         bar_chart.backgroundColor = UIColor.clearColor();
         bar_chart.gridBackgroundColor = UIColor.clearColor();
         bar_chart.data = chart_data;
@@ -84,10 +81,6 @@ class MeasurementsController:BaseController
         bar_chart.leftAxis.labelTextColor = UIColor.whiteColor();
         bar_chart.leftAxis.gridColor = UIColor.whiteColor();
         bar_chart.legend.textColor = UIColor.whiteColor();
-        
-
         super_view.addSubview(bar_chart);
-
     }
-
 }

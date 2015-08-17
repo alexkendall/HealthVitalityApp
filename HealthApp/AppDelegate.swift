@@ -13,6 +13,7 @@ let main_controller = MainController();
 let authorize_controller = AuthorizeController();
 let activity_controller = ActivityController();
 let measurements_controller = MeasurementsController();
+let user_measurements = Measurements(in_sex: SEX.MALE, in_height: 73.0, in_weight: 175, in_wingspan: 80, in_measurement_system: MEASUREMENT_SYSTEM.US);  // rename for clarification...???
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,13 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         window?.rootViewController = main_controller;
-        /*
-        tab_controller.viewControllers = [authorize_controller, main_controller];
-        tab_controller.selectedViewController = main_controller;
-        tab_controller.tabBar.backgroundColor = UIColor.blackColor();
-        tab_controller.tabBar.translucent = true;
-        window?.addSubview(tab_controller.view);
-        */
+    
         
         return true
     }

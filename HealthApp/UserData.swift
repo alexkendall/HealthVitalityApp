@@ -19,6 +19,15 @@ class Measurements:NSObject
     var wingspan:Double = 0.0;
     var measurement_system:MEASUREMENT_SYSTEM = MEASUREMENT_SYSTEM.US;
     
+    init(var in_sex:SEX, var in_height:Double, var in_weight:Double, var in_wingspan:Double, var in_measurement_system:MEASUREMENT_SYSTEM)
+    {
+        self.sex = in_sex;
+        self.height = in_height;
+        self.weight = in_weight
+        self.wingspan = in_wingspan;
+        self.measurement_system = in_measurement_system;
+    }
+    
     //---------------------------------------------------------------------
     
     class func CENTIMETERS_PER_INCH()-> Double

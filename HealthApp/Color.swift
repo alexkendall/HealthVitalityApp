@@ -11,7 +11,9 @@ import UIKit
 
 var OLIVE = UIColor(red: 255.0 / 255.0, green: 218.0 / 255.0, blue: 0.0, alpha: 1.0);
 var RED_ORANGE = UIColor(red: 255.0 / 255.0, green: 74.0 / 255.0, blue: 0.0, alpha: 1.0);
-
+var SOFT_LIME = UIColor(red: 131.0 / 255.0, green: 242.0 / 255.0, blue: 135.0 / 255.0, alpha: 1.0);
+var PIONEER_RED = UIColor(red: 255.0 / 255.0, green: 100.0 / 255.0, blue: 78.0 / 255.0, alpha: 1.0);
+var SUNSET_YELLOW = UIColor(red: 255.0 / 255.0, green: 231.0 / 255.0, blue: 82.0 / 255.0, alpha: 1.0);
 //-------------------------------------------------------------------------------------------------------
 // method for overloading * operator on color
 func *(color1:UIColor, mult:CGFloat)->UIColor
