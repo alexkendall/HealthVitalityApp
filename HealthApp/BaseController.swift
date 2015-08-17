@@ -64,6 +64,10 @@ class BaseController:UIViewController
                 
                 // you can do this in a shorter, more concise way by setting the value to its opposite, NOT value
                 self.super_view.removeFromSuperview();
-        })
+        });
+        for(var i = 0; i < main_controller.spring_buttons.count; ++i)
+        {
+            main_controller.spring_buttons[i].set_not_active();
+        }
     }
 }

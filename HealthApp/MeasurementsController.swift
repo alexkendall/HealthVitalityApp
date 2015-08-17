@@ -32,7 +32,8 @@ class MeasurementsController:BaseController
         
         
         // configure mock line chartd data
-        var avg_vals = [68.8, 180.0];
+        var avg_vals_male = [68.8, 180.0];
+        var avg_vals_female = [64.4, 160.0]
         
         
         // configure radar chart
@@ -52,11 +53,27 @@ class MeasurementsController:BaseController
             var personal_entry = BarChartDataEntry(value: my_vals[i], xIndex: i);
             personal_entries.append(personal_entry);
         }
-        for(var i = 0; i < dim_labels.count; ++i)
+        
+        var label_str:String!; // string that identifies data and sex
+        if(user_measurements.sex == SEX.MALE)
         {
-            var avg_entry = BarChartDataEntry(value: avg_vals[i], xIndex: i);
-            avg_data_entries.append(avg_entry);
+            for(var i = 0; i < dim_labels.count; ++i)
+            {
+                var avg_entry = BarChartDataEntry(value: avg_vals_male[i], xIndex: i);
+                avg_data_entries.append(avg_entry);
+            }
+            label_str = "Global Average (Male)";
         }
+        else
+        {
+            for(var i = 0; i < dim_labels.count; ++i)
+            {
+                var avg_entry = BarChartDataEntry(value: avg_vals_female[i], xIndex: i);
+                avg_data_entries.append(avg_entry);
+            }
+            label_str = "Global Average (Female)";
+        }
+        
         
         // personal data set
         var personal_data_set = BarChartDataSet(yVals: personal_entries, label: "Personal");
@@ -64,11 +81,11 @@ class MeasurementsController:BaseController
         personal_data_set.valueTextColor = UIColor.whiteColor();
         
         // global avg data set
-        var avg_data_set = BarChartDataSet(yVals: avg_data_entries, label: "Global Average")
+        var avg_data_set = BarChartDataSet(yVals: avg_data_entries, label: label_str);
         avg_data_set.colors = [PIONEER_RED];
         avg_data_set.valueTextColor = UIColor.whiteColor();
     
-        
+        // configure bar chart
         var chart_data = BarChartData(xVals: dim_labels, dataSets: [personal_data_set, avg_data_set]);
         bar_chart.backgroundColor = UIColor.clearColor();
         bar_chart.gridBackgroundColor = UIColor.clearColor();
@@ -83,6 +100,7 @@ class MeasurementsController:BaseController
         bar_chart.legend.textColor = UIColor.whiteColor();
         super_view.addSubview(bar_chart);
         
+        // set title
         set_title(bar_chart, in_text: "Measurements");
     }
 }

@@ -244,6 +244,7 @@ class MainController:UIViewController
     func showHeartRate()
     {
         animate_selection(2);
+        spring_buttons[2].set_active();
     }
     
     //-------------------------------------------------------------------------------------------------------
@@ -251,6 +252,7 @@ class MainController:UIViewController
     func showProgression()
     {
         animate_selection(1);
+        spring_buttons[1].set_active();
     }
     
     //-------------------------------------------------------------------------------------------------------
@@ -259,6 +261,7 @@ class MainController:UIViewController
     {
         main_controller.super_view.addSubview(activity_controller.view);
         animate_selection(3);
+        spring_buttons[3].set_active();
     }
     
     //-------------------------------------------------------------------------------------------------------
@@ -266,6 +269,7 @@ class MainController:UIViewController
     func showVitality()
     {
         animate_selection(0);
+        spring_buttons[0].set_active();
     }
     
     //-------------------------------------------------------------------------------------------------------
@@ -273,6 +277,7 @@ class MainController:UIViewController
     func showPressure()
     {
         animate_selection(4);
+        spring_buttons[4].set_active();
     }
     
     //-------------------------------------------------------------------------------------------------------
@@ -281,6 +286,7 @@ class MainController:UIViewController
     {
         main_controller.super_view.addSubview(measurements_controller.view);
         animate_selection(5);
+        spring_buttons[5].set_active();
     }
     
     //-------------------------------------------------------------------------------------------------------

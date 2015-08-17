@@ -16,6 +16,7 @@ class SpringBoardButton:UIButton
     var line_color:UIColor = UIColor.whiteColor();
     var line_width:CGFloat = 2.0;
     var path:UIBezierPath  = UIBezierPath();
+    var active_flag:Bool = false;
     
     init(frame: CGRect, var in_color:UIColor, var in_width:CGFloat)
     {
@@ -43,12 +44,17 @@ class SpringBoardButton:UIButton
         self.layer.shadowColor = UIColor.blackColor().CGColor;
     }
     
+    // highlights the button
+    // this will only occur if the view corresponding to that button is loaded
     func highlight_color()
     {
-        line_color = UIColor.blackColor();
-        backgroundColor = UIColor.whiteColor();
-        self.clipsToBounds = true;
-        self.setNeedsDisplay();
+        if(active_flag == false)
+        {
+            line_color = UIColor.blackColor();
+            backgroundColor = UIColor.whiteColor();
+            self.clipsToBounds = true;
+            self.setNeedsDisplay();
+        }
     }
     
     func unhighlight_color()
@@ -57,5 +63,17 @@ class SpringBoardButton:UIButton
         line_color = UIColor.whiteColor();
         self.clipsToBounds = true;
         self.setNeedsDisplay();
+    }
+    
+    // if the view controller corresponding to this button is loaded set this flag to true
+    func set_active()
+    {
+        active_flag = true;
+    }
+    
+    // if the view controller corresponding to this button disappears set flag to false
+    func set_not_active()
+    {
+        active_flag = false;
     }
 }
