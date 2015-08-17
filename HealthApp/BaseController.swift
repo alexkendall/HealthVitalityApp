@@ -13,6 +13,7 @@ class BaseController:UIViewController
     var super_view = UIView();
     var super_in_frame = CGRect();
     var super_out_frame = CGRect();
+    var title_label:UILabel!;
     
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -25,8 +26,19 @@ class BaseController:UIViewController
         super_in_frame = CGRect(x: super_view.frame.origin.x, y: super_view.frame.origin.y, width: super_view.bounds.width, height: super_view.bounds.height);
         super_out_frame = CGRect(x: super_view.bounds.width, y: super_view.frame.origin.y, width: super_view.bounds.width, height: super_view.bounds.height);
         super_view.frame = super_out_frame;
-        
     }
+    
+    func set_title(var chart_view:UIView, var in_text:String)
+    {
+        // add label above chart
+        title_label = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: super_view.bounds.width, height: chart_view.frame.origin.y));
+        title_label.textColor = UIColor.whiteColor();
+        title_label.textAlignment = NSTextAlignment.Center;
+        title_label.font = UIFont.systemFontOfSize(23.0);
+        title_label.text = in_text;
+        super_view.addSubview(title_label);
+    }
+
     
     override func viewDidAppear(animated: Bool)
     {

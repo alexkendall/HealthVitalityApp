@@ -82,5 +82,7 @@ class MeasurementsController:BaseController
         bar_chart.leftAxis.gridColor = UIColor.whiteColor();
         bar_chart.legend.textColor = UIColor.whiteColor();
         super_view.addSubview(bar_chart);
+        
+        set_title(bar_chart, in_text: "Measurements");
     }
 }

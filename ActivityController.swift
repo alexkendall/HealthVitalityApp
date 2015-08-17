@@ -60,7 +60,7 @@ class ActivityController:BaseController
 
        
         // configure data set graphics
-        data_set.circleColors = [UIColor.whiteColor()];
+        data_set.circleColors = [SOFT_LIME, PIONEER_RED, SUNSET_YELLOW];
         data_set.colors = [UIColor.whiteColor()];
         data_set.circleHoleColor = UIColor.whiteColor();
         data_set.drawValuesEnabled = false;
@@ -94,13 +94,7 @@ class ActivityController:BaseController
         lineChartView.legend.colors = [UIColor.whiteColor()];
         lineChartView.legend.textColor = UIColor.whiteColor();
         
-        // add label above chart
-        var label = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: super_view.bounds.width, height: lineChartView.frame.origin.y));
-        label.textColor = UIColor.whiteColor();
-        label.textAlignment = NSTextAlignment.Center;
-        label.font = UIFont.systemFontOfSize(23.0);
-        label.text = "Steps Activity";
-        super_view.addSubview(label);
+        set_title(lineChartView, in_text: "Steps Activity");
     }
 }
 
