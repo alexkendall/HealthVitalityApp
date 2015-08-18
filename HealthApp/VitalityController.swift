@@ -11,20 +11,21 @@ import UIKit
 
 class VitalityController:BaseController
 {
+    var alpha:CGFloat = 0.0;
+    var timer:NSTimer!;
+    var vitality_indicator:VitalityIndicator!;
+    var vitality_label:UILabel!;
+    var real_age_indicator:VitalityIndicator!;
+    var real_age_label:UILabel!;
+    var background_color:UIColor = UIColor.whiteColor();
+    
     override func viewDidLoad() {
-        var vitality_indicator:VitalityIndicator!;
-        var vitality_label:UILabel!;
-        var real_age_indicator:VitalityIndicator!;
-        var real_age_label:UILabel!;
-        var background_color:UIColor = UIColor.whiteColor();
+
         super.viewDidLoad();
         
         
         var uc_height:CGFloat = super_view.bounds.height * 0.5;
         var upper_container:UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: super_view.bounds.width, height: uc_height));
-        //upper_container.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5);
-        //upper_container.layer.borderWidth = 1.0;
-        //upper_container.layer.borderColor = UIColor.whiteColor().CGColor;
         super_view.addSubview(upper_container);
         
         var mult_:CGFloat = 0.8;
@@ -60,6 +61,36 @@ class VitalityController:BaseController
         real_age_label.font = UIFont.systemFontOfSize(25.0);
         real_age_label.text = "Actual Age";
         super_view.addSubview(real_age_label);
+        
+        // set alphas to 0.0
+        real_age_label.alpha = 0.0;
+        real_age_indicator.alpha = 0.0;
+        vitality_label.alpha = 0.0;
+        vitality_indicator.alpha = 0.0;
+    }
+    
+    override func viewDidAppear(animated: Bool)
+    {
+        super.viewDidAppear(animated);
+        // fade vitality indicators in and out
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "fade_in", userInfo: nil, repeats: true);
+        
+    }
+    func fade_in()
+    {
+        if(self.alpha < 1.0)
+        {
+            alpha += 0.05;
+            vitality_indicator.alpha = self.alpha;
+            vitality_label.alpha = self.alpha;
+            real_age_indicator.alpha = self.alpha;
+            real_age_label.alpha = self.alpha;
+        }
+        else
+        {
+            timer.invalidate();
+        }
     }
     
 }

@@ -74,11 +74,8 @@ class VitalityIndicator:UIView
     
     //-------------------------------------------------------------------------------------------------------
     
-    
-    // sets the age of the vitality indicator
-    // compares to real age and interpolates color accordingly
-    // green = healthy for age, red = unhealthy for age
-    func interpolate_relative_health(var vitality_age:CGFloat, var actual_age:CGFloat)
+    // returns a color indicating how healthy or unhealthy a person is given their age and vitality age
+    class func get_vitality_color(var vitality_age:CGFloat, var actual_age:CGFloat)->UIColor
     {
         var healthy_color:UIColor = UIColor.greenColor();
         var unhealthy_color:UIColor = UIColor.yellowColor();
@@ -88,7 +85,7 @@ class VitalityIndicator:UIView
         
         println("Ratio: " + String(stringInterpolationSegment: ratio));
         
-      
+        
         // clamp ratio to bounds
         if(ratio > upper_bound)
         {
@@ -114,7 +111,16 @@ class VitalityIndicator:UIView
             t_value = (t_value - 0.5) * 2.0;
             color = (UIColor.yellowColor() * (1.0 - t_value)) + (UIColor.redColor() * t_value);
         }
-        
+        return color;
+    }
+    
+    
+    // sets the age of the vitality indicator
+    // compares to real age and interpolates color accordingly
+    // green = healthy for age, red = unhealthy for age
+    func interpolate_relative_health(var vitality_age:CGFloat, var actual_age:CGFloat)
+    {
+        var color = VitalityIndicator.get_vitality_color(vitality_age, actual_age: actual_age);
         set_color(color);
         set_vitality_age(Int(vitality_age));
         main_controller.vitality_indicator.setNeedsDisplay();

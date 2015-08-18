@@ -41,9 +41,9 @@ class HeartRateController:BaseController
         hr_data_set.colors = [PIONEER_RED];
         hr_data_set.lineWidth = 2.0;
         hr_data_set.circleColors = [PIONEER_RED];
-        hr_data_set.valueTextColor = SUNSET_YELLOW;
+        hr_data_set.valueTextColor = PIONEER_RED;
         hr_data_set.valueFont = UIFont.systemFontOfSize(10.0);
-        
+    
         var hr_data = LineChartData(xVals: days, dataSet: hr_data_set);
         var combined_data = CombinedChartData(xVals: days, dataSet: mixed_data_set);
     
@@ -73,6 +73,7 @@ class HeartRateController:BaseController
         line_graph.leftAxis.customAxisMin = Double(min_int);
         line_graph.leftAxis.customAxisMax = Double(max_int);
         line_graph.data = hr_data;
+        line_graph.legend.textColor = UIColor.whiteColor();
         
         super_view.addSubview(line_graph);
         
@@ -80,6 +81,6 @@ class HeartRateController:BaseController
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated);
-        line_graph.animate(xAxisDuration: 2.0, yAxisDuration: 2.0);
+        line_graph.animate(yAxisDuration: 2.0, easingOption: ChartEasingOption.EaseInQuad);
     }
 }
