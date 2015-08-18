@@ -71,10 +71,11 @@ class ActivityController:BaseController
         pie_chart.legend.enabled = false;
         pie_chart.centerText = "Daily Step Activity";
         pie_chart.centerTextFont = UIFont.systemFontOfSize(17.0);
+        pie_chart.centerTextColor = UIColor.whiteColor();
         pie_chart.descriptionText = "";
         pie_chart.holeTransparent = true;
-        pie_chart.holeColor = nil;
-        pie_chart.transparentCircleRadiusPercent = 0.0;
+        pie_chart.holeColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0);
+        //pie_chart.transparentCircleRadiusPercent = 0.0;
         
         //lineChartView.data = data;
         
