@@ -7,20 +7,24 @@
 //
 
 import Foundation
+import UIKit
 
 enum SEX {case MALE, FEMALE}
 enum MEASUREMENT_SYSTEM {case METRIC, US};
+var vitality_age:CGFloat = 33.0;
 
 class Measurements:NSObject
 {
+    var age:Double = 0.0;
     var sex:SEX = SEX.MALE;
     var height:Double = 0.0;
     var weight:Double = 0.0;
     var wingspan:Double = 0.0;
     var measurement_system:MEASUREMENT_SYSTEM = MEASUREMENT_SYSTEM.US;
     
-    init(var in_sex:SEX, var in_height:Double, var in_weight:Double, var in_wingspan:Double, var in_measurement_system:MEASUREMENT_SYSTEM)
+    init(var in_age:Double, var in_sex:SEX, var in_height:Double, var in_weight:Double, var in_wingspan:Double, var in_measurement_system:MEASUREMENT_SYSTEM)
     {
+        self.age = in_age;
         self.sex = in_sex;
         self.height = in_height;
         self.weight = in_weight

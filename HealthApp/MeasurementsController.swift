@@ -101,6 +101,6 @@ class MeasurementsController:BaseController
         super_view.addSubview(bar_chart);
         
         // set title
-        set_title(bar_chart, in_text: "Measurements");
+        set_title(bar_chart, in_text: "Height & Weight");
     }
 }

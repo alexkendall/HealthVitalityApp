@@ -50,8 +50,7 @@ class BaseController:UIViewController
             println("here");
             self.super_view.frame = self.super_in_frame;
         })
-        
-        
+
     }
     
     func push_out()

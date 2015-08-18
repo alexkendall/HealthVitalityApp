@@ -70,8 +70,7 @@ class MainController:UIViewController
         super_view.addSubview(grid);
         
         var real_age:CGFloat = 50.0;
-        var vitality_age:CGFloat = 47.0;
-        vitality_indicator.interpolate_relative_health(vitality_age, actual_age: real_age);
+        vitality_indicator.interpolate_relative_health(vitality_age, actual_age: CGFloat(user_measurements.age));
         
         // generate container views to section off main controller into 6 sub views
         var num_cols:Int = 2;
@@ -173,6 +172,7 @@ class MainController:UIViewController
     
     func showGrid()
     {
+        /*
         println("Test case...Updating health information...");
         
         var real_age:UInt32 = arc4random_uniform(20) + 50;
@@ -181,7 +181,7 @@ class MainController:UIViewController
         println("Real Age: " + String(real_age));
         println("Vitality Age: " + String(vitality_age));
         println(get_age_from_sodium(140.0));
-        
+        */
         
         for(var i = 0; i < out_container_frames.count; ++i)
         {
@@ -198,6 +198,9 @@ class MainController:UIViewController
         }
         activity_controller.push_out();
         measurements_controller.push_out();
+        heart_rate_controller.push_out();
+        progression_controller.push_out();
+        vitality_controller.push_out();
     }
     
     //-------------------------------------------------------------------------------------------------------
@@ -244,7 +247,9 @@ class MainController:UIViewController
     func showHeartRate()
     {
         animate_selection(2);
+        main_controller.super_view.addSubview(heart_rate_controller.view);
         spring_buttons[2].set_active();
+
     }
     
     //-------------------------------------------------------------------------------------------------------
@@ -253,6 +258,7 @@ class MainController:UIViewController
     {
         animate_selection(1);
         spring_buttons[1].set_active();
+        main_controller.super_view.addSubview(progression_controller.view);
     }
     
     //-------------------------------------------------------------------------------------------------------
@@ -268,6 +274,7 @@ class MainController:UIViewController
     
     func showVitality()
     {
+        main_controller.super_view.addSubview(vitality_controller.view);
         animate_selection(0);
         spring_buttons[0].set_active();
     }
