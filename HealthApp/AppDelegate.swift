@@ -17,6 +17,7 @@ let heart_rate_controller = HeartRateController();
 let user_measurements = Measurements(in_age: 30.0, in_sex: SEX.MALE, in_height: 73.0, in_weight: 175, in_wingspan: 80, in_measurement_system: MEASUREMENT_SYSTEM.US);  // rename for clarification...???
 let progression_controller = ProgressionController();
 let vitality_controller = VitalityController();
+let blood_pressure_controller = BloodPressureController();
 
 
 @UIApplicationMain

@@ -79,8 +79,9 @@ class HeartRateController:BaseController
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(animated: Bool)
+    {
         super.viewDidAppear(animated);
-        line_graph.animate(yAxisDuration: 2.0, easingOption: ChartEasingOption.EaseInQuad);
+        line_graph.animate(xAxisDuration: 2.0, yAxisDuration: 2.0);
     }
 }

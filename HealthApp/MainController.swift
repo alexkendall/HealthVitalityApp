@@ -201,6 +201,7 @@ class MainController:UIViewController
         heart_rate_controller.push_out();
         progression_controller.push_out();
         vitality_controller.push_out();
+        blood_pressure_controller.push_out();
     }
     
     //-------------------------------------------------------------------------------------------------------
@@ -283,6 +284,7 @@ class MainController:UIViewController
     
     func showPressure()
     {
+        main_controller.super_view.addSubview(blood_pressure_controller.view);
         animate_selection(4);
         spring_buttons[4].set_active();
     }

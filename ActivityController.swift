@@ -36,6 +36,7 @@ class ActivityController:BaseController
         steps = [2000.0, 4000.0, 6000.0, 5000.0, 1200.0, 5000.0, 6000.0];
         setChart(days, values: steps);
         
+
     }
     
     override func viewDidAppear(animated: Bool)
@@ -70,6 +71,8 @@ class ActivityController:BaseController
         // configure chart
         lineChartView.legend.labels = ["Steps Taken"];
         lineChartView.legend.colors = [UIColor.whiteColor()];
+        lineChartView.highlightEnabled = true;
+        
         set_title(lineChartView, in_text: "Steps Activity");
     }
 }

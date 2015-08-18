@@ -45,7 +45,6 @@ class VitalityIcon:UIButton
         var path = CGPathCreateMutable();
         var start_x = rect.origin.x;
         var start_y = rect.origin.y;
-        
         var bezier = UIBezierPath();
         
     }

@@ -19,7 +19,6 @@ class MeasurementsController:BaseController
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated);
-        
         bar_chart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0);
     }
     
@@ -87,7 +86,7 @@ class MeasurementsController:BaseController
     
         // configure bar chart
         var chart_data = BarChartData(xVals: dim_labels, dataSets: [personal_data_set, avg_data_set]);
-        bar_chart.backgroundColor = UIColor.clearColor();
+        bar_chart.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5);
         bar_chart.gridBackgroundColor = UIColor.clearColor();
         bar_chart.data = chart_data;
         bar_chart.descriptionText = "";

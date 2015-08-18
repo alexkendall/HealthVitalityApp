@@ -41,6 +41,7 @@
 		4653834B1B7BB52E00131695 /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653834A1B7BB52E00131695 /* ActivityController.swift */; };
 		4653834D1B7BC1B500131695 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653834C1B7BC1B500131695 /* BaseController.swift */; };
 		46E38F9B1B8298BF00A8E682 /* VitalityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E38F9A1B8298BF00A8E682 /* VitalityController.swift */; };
+		46E38F9F1B82E58F00A8E682 /* BloodPressureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E38F9E1B82E58F00A8E682 /* BloodPressureController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		4653834A1B7BB52E00131695 /* ActivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityController.swift; path = ../ActivityController.swift; sourceTree = "<group>"; };
 		4653834C1B7BC1B500131695 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		46E38F9A1B8298BF00A8E682 /* VitalityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VitalityController.swift; sourceTree = "<group>"; };
+		46E38F9E1B82E58F00A8E682 /* BloodPressureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BloodPressureController.swift; path = HealthApp.xcodeproj/../BloodPressureController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 		464C8D8A1B6F9BBE0065552B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				46E38F9E1B82E58F00A8E682 /* BloodPressureController.swift */,
 				464C8D901B6FB5920065552B /* MainController.swift */,
 				46E38F9A1B8298BF00A8E682 /* VitalityController.swift */,
 				4653834C1B7BC1B500131695 /* BaseController.swift */,
@@ -429,6 +432,7 @@
 				4653832C1B74417800131695 /* LocationButton.swift in Sources */,
 				464C8D6D1B6F9BA40065552B /* AuthorizationController.swift in Sources */,
 				464656DC1B82664400803A4E /* ProgressionController.swift in Sources */,
+				46E38F9F1B82E58F00A8E682 /* BloodPressureController.swift in Sources */,
 				4653831F1B73041C00131695 /* HorizontalLine.swift in Sources */,
 				465383251B73BF7E00131695 /* AgePredictor.swift in Sources */,
 				464C8D681B6F9BA40065552B /* AppDelegate.swift in Sources */,
