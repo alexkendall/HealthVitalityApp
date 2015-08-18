@@ -14,6 +14,9 @@ var RED_ORANGE = UIColor(red: 255.0 / 255.0, green: 74.0 / 255.0, blue: 0.0, alp
 var SOFT_LIME = UIColor(red: 131.0 / 255.0, green: 242.0 / 255.0, blue: 135.0 / 255.0, alpha: 1.0);
 var PIONEER_RED = UIColor(red: 255.0 / 255.0, green: 100.0 / 255.0, blue: 78.0 / 255.0, alpha: 1.0);
 var SUNSET_YELLOW = UIColor(red: 255.0 / 255.0, green: 231.0 / 255.0, blue: 82.0 / 255.0, alpha: 1.0);
+var PALE_VIOLET = UIColor(red: 180.0 / 255.0, green: 111.0 / 255.0, blue: 179.0 / 255.0, alpha: 1.0);
+var SOFT_ORANGE = UIColor(red: 254.0 / 255.0, green: 191.0 / 255.0, blue: 128.0 / 255.0, alpha: 1.0);
+var TEAL = UIColor(red: 116.0 / 255.0, green: 155.0 / 255.0, blue: 230.0 / 255.0, alpha: 1.0);
 //-------------------------------------------------------------------------------------------------------
 // method for overloading * operator on color
 func *(color1:UIColor, mult:CGFloat)->UIColor

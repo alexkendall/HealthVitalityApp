@@ -25,7 +25,12 @@ class BloodPressureController:BaseController
         super_view.addSubview(horizontal_chart);
         
         var data = [72, 116.0];
-        var stats = ["Diastolic BP", "Systolic BP"];
+        var tag:String = "(Healthy)";
+        if(data[0] > 80) || (data[1] > 120)
+        {
+            tag = "(Unhealthy)"
+        }
+        var stats = ["Diastolic BP " + tag, "Systolic BP " + tag];
         var entries = [BarChartDataEntry]();
         for(var i = 0; i < data.count; ++i)
         {

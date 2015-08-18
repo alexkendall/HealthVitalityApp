@@ -68,6 +68,8 @@ class HeartRateController:BaseController
         
         var min_int = Int(min) - (Int(min) % 5);
         var max_int = Int(max) - (Int(max) % 5) + 5;
+        
+        super_view.addSubview(line_graph);
 
         line_graph.leftAxis.startAtZeroEnabled = false;
         line_graph.leftAxis.customAxisMin = Double(min_int);
@@ -75,7 +77,7 @@ class HeartRateController:BaseController
         line_graph.data = hr_data;
         line_graph.legend.textColor = UIColor.whiteColor();
         
-        super_view.addSubview(line_graph);
+        
         
     }
     
